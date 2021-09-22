@@ -4,13 +4,13 @@
     <id>TcHmiSimpleRangeSlider</id>
     <version>1.0.0</version>
     <title>TcHmiSimpleRangeSlider</title>
-    <authors>ADD AUTHOR</authors>
-    <owners>ADD OWNER</owners>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <authors>Jack Borelius</authors>
+    <owners>Jack Borelius</owners>
+    <projectUrl>https://github.com/hijaaack/JB.TcHmiSimpleRangeSlider</projectUrl>
     <license type="expression">MIT</license>
     <icon>images/logo.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>-.-</description>
+    <description>Simple Range Slider</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2021</copyright>
     <tags>TwinCAT HMI</tags>
