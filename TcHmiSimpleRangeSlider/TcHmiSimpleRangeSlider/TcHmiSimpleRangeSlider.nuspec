@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
-    <id>TcHmiSimpleRangeSlider</id>
+    <id>JB.TcHmiSimpleRangeSlider</id>
     <version>1.0.0</version>
     <title>TcHmiSimpleRangeSlider</title>
     <authors>Jack Borelius</authors>
