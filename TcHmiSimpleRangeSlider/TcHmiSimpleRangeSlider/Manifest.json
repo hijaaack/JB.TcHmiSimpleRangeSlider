@@ -1,6 +1,4 @@
 ﻿{
-  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
-  "apiVersion": 1,
   "modules": [
     {
       "type": "Package",
@@ -10,14 +8,17 @@
       "type": "Control",
       "basePath": "TcHmiSimpleRangeSliderControl/",
       "descriptionFile": "Description.json",
-      "toolboxCategory": "Beckhoff.TwinCAT.HMI:202"
+      "toolboxCategory": "TcHmiSimpleRangeSlider:1632"
     }
   ],
   "provideMetadata": {
     "toolbox": {
       "TcHmiSimpleRangeSlider": {
+        "1632": "JB: Controls",
         "200": "TcHmiSimpleRangeSlider"
       }
     }
-  }
+  },
+  "$schema": ".hmiframework/Schema/Manifest.Schema.json",
+  "apiVersion": 1
 }

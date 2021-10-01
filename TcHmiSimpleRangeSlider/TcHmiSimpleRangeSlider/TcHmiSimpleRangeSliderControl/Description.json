@@ -1,9 +1,9 @@
 ﻿{
   "$schema": "../.hmiframework/Schema/ControlDescription.Schema.json",
   "apiVersion": 1,
-  "name": "TcHmiSimpleRangeSliderControl",
+  "name": "TcHmiSimpleRangeSlider",
   "namespace": "TcHmi.Controls.TcHmiSimpleRangeSlider",
-  "displayName": "TcHmiSimpleRangeSliderControl",
+  "displayName": "TcHmiSimpleRangeSlider",
   "version": {
     "full": "1.0.0.0",
     "major": 1,
@@ -14,12 +14,12 @@
   "visible": true,
   "themeable": "Standard",
   "base": "TcHmi.Controls.System.TcHmiControl",
-  "description": "This description text will be used as a Tooltip in Visual Studio.",
+  "description": "Simple Range Slider.",
   "properties": {
     "containerControl": false,
     "geometry": {
-      "width": 150,
-      "height": 150
+      "width": 300,
+      "height": 50
     }
   },
   "template": "Template.html",
@@ -83,10 +83,93 @@
         }
     },
   "attributes": [
+    {
+      "name": "data-tchmi-rangeslider-value",
+      "displayName": "Value",
+      "propertyName": "Value",
+      "propertySetterName": "setValue",
+      "propertyGetterName": "getValue",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "RangeSlider",
+      "description": "Range Slider Value.",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": false,
+      "defaultValue": 75,
+      "defaultValueInternal": 75
+    },
+    {
+      "name": "data-tchmi-rangeslider-min",
+      "displayName": "Min",
+      "propertyName": "Min",
+      "propertySetterName": "setMin",
+      "propertyGetterName": "getMin",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "RangeSlider",
+      "description": "Range Slider Min Value.",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": false,
+      "defaultValue": 0,
+      "defaultValueInternal": 0
+    },
+    {
+      "name": "data-tchmi-rangeslider-max",
+      "displayName": "Max",
+      "propertyName": "Max",
+      "propertySetterName": "setMax",
+      "propertyGetterName": "getMax",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "RangeSlider",
+      "description": "Range Slider Max Value.",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": false,
+      "defaultValue": 100,
+      "defaultValueInternal": 100
+    },
+    {
+      "name": "data-tchmi-rangeslider-stepsize",
+      "displayName": "StepSize",
+      "propertyName": "StepSize",
+      "propertySetterName": "setStepSize",
+      "propertyGetterName": "getStepSize",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Number",
+      "category": "RangeSlider",
+      "description": "Range Slider Step Size Value.",
+      "requiredOnCompile": false,
+      "readOnly": false,
+      "bindable": true,
+      "heritable": false,
+      "defaultValue": 0,
+      "defaultValueInternal": 0
+    }
   ],
-  "attributeCategories": [],
+  "attributeCategories": [
+    {
+      "name": "RangeSlider",
+      "displayPriority": 10
+    }
+  ],
   "functions": [],
-  "events": [],
+  "events": [
+    {
+      "name": ".onSliderInputChanged",
+      "displayName": ".onSliderInputChanged",
+      "visible": true,
+      "displayPriority": 10,
+      "category": "Control",
+      "description": "The onSliderInputChanged event is fired when the slider value has changed.",
+      "heritable": true
+    }
+  ],
   "dataTypes": [
     {
       "schema": "Schema/Types.Schema.json"

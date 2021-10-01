@@ -11,7 +11,7 @@
     <icon>images/logo.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Simple Range Slider</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <releaseNotes>First release v1.0.0</releaseNotes>
     <copyright>Copyright 2021</copyright>
     <tags>TwinCAT HMI</tags>
     <dependencies>

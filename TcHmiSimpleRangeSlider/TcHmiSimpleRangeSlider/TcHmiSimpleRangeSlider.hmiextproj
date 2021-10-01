@@ -56,6 +56,21 @@
   <Import Project="$(TwinCATHmi_Tasks)" />
   <Import Project="$(TwinCATHmi_Targets)" />
   <ItemGroup>
+    <Content Include="Images\logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TcHmiSimpleRangeSliderControl\Icons\16x16.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TcHmiSimpleRangeSliderControl\Icons\24x24.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TcHmiSimpleRangeSliderControl\Icons\32x32.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TcHmiSimpleRangeSliderControl\Icons\64x64.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="tsconfig.tpl.json">
       <SubType>Content</SubType>
       <Visible>true</Visible>
@@ -66,15 +81,10 @@
       <DependentUpon>tsconfig.tpl.json</DependentUpon>
     </Content>
     <HmiManifest Include="Manifest.json" />
-    <Content Include="Images\logo.png" />
     <Content Include="TcHmiSimpleRangeSlider.nuspec" />
     <Content Include=".eslintrc.json">
       <Visible>false</Visible>
     </Content>
-    <Content Include="TcHmiSimpleRangeSliderControl\Icons\16x16.png" />
-    <Content Include="TcHmiSimpleRangeSliderControl\Icons\24x24.png" />
-    <Content Include="TcHmiSimpleRangeSliderControl\Icons\32x32.png" />
-    <Content Include="TcHmiSimpleRangeSliderControl\Icons\64x64.png" />
     <Content Include="TcHmiSimpleRangeSliderControl\Template.html" />
     <Content Include="TcHmiSimpleRangeSliderControl\Themes\Base\Style.css" />
     <Content Include="TcHmiSimpleRangeSliderControl\Themes\Base-Dark\Style.css" />
