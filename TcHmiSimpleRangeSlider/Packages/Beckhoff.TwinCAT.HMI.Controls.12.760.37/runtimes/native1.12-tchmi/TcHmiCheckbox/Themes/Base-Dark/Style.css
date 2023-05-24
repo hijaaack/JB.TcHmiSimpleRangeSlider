@@ -1,0 +1,29 @@
+/** Styles for the theme: Base-Dark */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiCheckbox,
+.tchmi-checkbox {
+    --tchmi-background: #2a3845;
+    --tchmi-background-active: linear-gradient(135deg, #4089cb, #2775be 40%);
+    --tchmi-stroke: white;
+    --tchmi-color: white;
+    color: var(--tchmi-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiCheckbox-template,
+.tchmi-checkbox-template {
+    background-color: var(--tchmi-background);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.2), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiCheckbox-toggle-state-icon,
+.tchmi-checkbox-toggle-state-icon {
+    stroke: var(--tchmi-stroke);
+}
+
+/* class TcHmi_Controls_Beckhoff_TcHmiCheckbox-active will be set/unset in the control */
+.TcHmi_Controls_Beckhoff_TcHmiCheckbox.TcHmi_Controls_Beckhoff_TcHmiCheckbox-active
+    .TcHmi_Controls_Beckhoff_TcHmiCheckbox-template,
+.tchmi-checkbox.tchmi-checkbox-active .tchmi-checkbox-template {
+    background: var(--tchmi-background-active);
+}

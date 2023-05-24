@@ -1,0 +1,11 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "de",
+    "localizedText": {
+        "Define_Data_And_Schema": "Bitte definieren Sie das 'Data' und das 'DataSchema' Attribut wenn Sie nicht das 'DataSymbol' Attribut verwenden.",
+        "ColumnData_Name": "Name",
+        "ColumnData_Value": "Wert",
+        "ColumnData_Datatype": "Datentyp",
+        "ColumnData_PreparedValue": "Vorbereiteter Wert"
+    }
+}

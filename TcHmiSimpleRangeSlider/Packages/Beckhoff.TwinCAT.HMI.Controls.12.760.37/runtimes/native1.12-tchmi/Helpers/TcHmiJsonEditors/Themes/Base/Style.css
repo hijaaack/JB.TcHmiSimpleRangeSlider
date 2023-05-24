@@ -1,0 +1,85 @@
+.TcHmi_Controls_Helpers_Editor .compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton,
+.TcHmi_Controls_Helpers_Editor.compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton {
+    box-shadow: none;
+    --tchmi-background: var(--tchmi-highlight-background);
+    --tchmi-background-pressed: var(--tchmi-highlight-background-pressed);
+    --tchmi-color: var(--tchmi-contrasting-text-color);
+    --tchmi-color-pressed: var(--tchmi-contrasting-text-color);
+}
+
+.TcHmi_Controls_Helpers_Editor .compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton.down,
+.TcHmi_Controls_Helpers_Editor.compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton.down {
+    box-shadow: var(--tchmi-inset-shadow);
+}
+
+.TcHmi_Controls_Helpers_Editor.disabled .value-description {
+    color: var(--tchmi-disabled-text-color);
+}
+
+.TcHmi_Controls_Helpers_Editor.disabled .TcHmi_Controls_Helpers_DirectoryBrowser-path-display::after {
+    background: var(--tchmi-control-background);
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table tr.selected td {
+    background: var(--tchmi-selected-background);
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-datetimepicker .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/datetimepicker.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-timespanpicker .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/timespanpicker.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-add .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/add.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-add.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/add_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-remove .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/remove.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-remove.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/remove_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-up .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/move-up.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-up.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/move-up_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/move-down.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Helpers_Editor-button-icon-down.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/move-down_active.svg');
+    background-position: center;
+    background-size: contain;
+}

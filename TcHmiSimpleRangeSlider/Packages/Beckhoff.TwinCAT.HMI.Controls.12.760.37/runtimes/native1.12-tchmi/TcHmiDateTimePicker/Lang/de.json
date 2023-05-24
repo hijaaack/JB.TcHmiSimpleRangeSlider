@@ -1,0 +1,11 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "de",
+    "localizedText": {
+        "Label_Text_Time": "Uhrzeit",
+        "Button_Text_Ok": "OK",
+        "Button_Text_Cancel": "Abbrechen",
+        "Tooltip_LessThanMin_Text": "Der aktuelle Zeitpunkt liegt vor dem Startzeitpunkt: {0}",
+        "Tooltip_GreaterThanMax_Text": "Der aktuelle Zeitpunkt liegt nach dem Endzeitpunkt: {0}"
+    }
+}

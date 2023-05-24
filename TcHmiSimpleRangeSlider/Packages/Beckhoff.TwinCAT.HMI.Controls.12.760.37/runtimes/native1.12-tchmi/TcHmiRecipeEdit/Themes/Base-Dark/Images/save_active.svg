@@ -1,0 +1,23 @@
+<svg id="pfade" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #4c6374;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-1 {
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="20.543 61.5 58.701 61.5 58.701 22.5 54.739 18.5 20.543 18.5 20.543 61.5"/>
+  <rect class="cls-1" x="26.752" y="40" width="25.8752" height="21.5"/>
+  <rect class="cls-1" x="29.9086" y="18.5263" width="19.4066" height="12.6199"/>
+  <rect class="cls-2" x="39.6119" y="20.7712" width="4.8903" height="8.125"/>
+  <line class="cls-2" x1="29.9086" y1="45.438" x2="49.3152" y2="45.438"/>
+  <line class="cls-2" x1="29.9086" y1="51.0422" x2="49.3152" y2="51.0422"/>
+  <line class="cls-2" x1="29.9086" y1="56.6462" x2="49.3152" y2="56.6462"/>
+</svg>

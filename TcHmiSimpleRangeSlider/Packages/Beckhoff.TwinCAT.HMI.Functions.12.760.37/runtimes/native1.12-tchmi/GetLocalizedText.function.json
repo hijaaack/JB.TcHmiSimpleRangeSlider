@@ -1,0 +1,39 @@
+{
+    "$schema": "../TcHmiFramework/Schema/FunctionDescription.Schema.json",
+    "apiVersion": 1,
+    "version": {
+        "full": "1.12.760.37",
+        "major": 1,
+        "minor": 12,
+        "build": 760,
+        "revision": 37
+    },
+    "dependencyFiles": [
+        {
+            "name": "GetLocalizedText.js",
+            "type": "JavaScript",
+            "description": ""
+        }
+    ],
+    "function": {
+        "name": "GetLocalizedText",
+        "namespace": "TcHmi.Functions.Beckhoff",
+        "displayName": "GetLocalizedText",
+        "visible": true,
+        "description": "Returns a localized text by key.",
+        "category": "Locale",
+        "returnValue": {
+            "type": "tchmi:general#/definitions/String"
+        },
+        "arguments": [
+            {
+                "name": "key",
+                "displayName": "key",
+                "type": "tchmi:general#/definitions/String",
+                "description": "The key of the localized text.",
+                "required": true,
+                "bindable": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "../../../../../TcHmiFramework/Schema/ThemeDescription.Schema.json",
+    "controlTypeValues": {
+        "TcHmi.Controls.Beckhoff.TcHmiLineChart": {
+            "attributes": {
+                "XLabelFontColor": {
+                    "color": "#ffffff"
+                },
+                "XAxisNameFontColor": {
+                    "color": "#ffffff"
+                },
+                "XAxisColor": {
+                    "color": "#ffffff"
+                },
+                "GridLineColor": {
+                    "color": "#ffffff"
+                },
+                "SubgridLineColor": {
+                    "color": "#ffffff"
+                },
+                "GridBackgroundColor": {
+                    "color": "#2b2b2c"
+                }
+            },
+            "themedResources": {
+                "LineGraphDescriptionLineColor": {
+                    "color": "#0f8d7e"
+                },
+                "LineGraphDescriptionPointDotFillColor": {
+                    "color": "#0f8d7e"
+                },
+                "LineGraphDescriptionPointDotStrokeColor": {
+                    "color": "#0f8d7e"
+                },
+                "YAxisLabelFontColor": {
+                    "color": "#ffffff"
+                },
+                "YAxisAxisColor": {
+                    "color": "#ffffff"
+                },
+                "YAxisAxisNameFontColor": {
+                    "color": "#ffffff"
+                },
+                "ReferenceLineColor": {
+                    "color": "#ffffff"
+                },
+                "LineGraphDescriptionFillColor": {
+                    "color": "#0f8d7e"
+                }
+            }
+        }
+    }
+}

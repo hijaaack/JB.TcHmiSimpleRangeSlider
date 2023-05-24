@@ -1,0 +1,34 @@
+/** Styles for the theme: Base */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiBarChart,
+.tchmi-bar-chart {
+    --tchmi-background: rgba(255, 255, 255, 0.5);
+    --tchmi-template-background: transparent;
+    background: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiBarChart-template,
+.tchmi-bar-chart-template {
+    background: var(--tchmi-template-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiBarChart-template-chart,
+.tchmi-bar-chart-template-chart {
+    background: #f5f6f7;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiBarChart-template-legend {
+    background: #f5f6f7;
+    color: #4794da;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiBarChart-template-legend-checkbox {
+    appearance: none;
+    background: #ffffff;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiBarChart-template-legend-checkbox:checked {
+    background-image: url(Images/checkbox.svg), linear-gradient(to bottom right, #2774ba, #4794da 20%);
+    background-size: 13px 13px;
+}

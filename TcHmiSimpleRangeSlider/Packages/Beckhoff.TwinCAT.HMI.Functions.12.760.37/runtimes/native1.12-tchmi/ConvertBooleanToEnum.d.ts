@@ -1,0 +1,10 @@
+declare module TcHmi.Functions.Beckhoff {
+    /**
+     * Converts boolean values to enumeration values.
+     * @param value
+     * @param trueValue
+     * @param falseValue
+     */
+    function ConvertBooleanToEnum<T = any>(value: boolean, trueValue: T, falseValue: T): T;
+}
+//# sourceMappingURL=ConvertBooleanToEnum.d.ts.map

@@ -1,0 +1,131 @@
+.TcHmi_Controls_Helpers_Editor {
+    position: relative;
+}
+
+.TcHmi_Controls_Helpers_Editor .compound-control-container,
+.TcHmi_Controls_Helpers_Editor.compound-control-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+.TcHmi_Controls_Helpers_Editor .TcHmi_Controls_System_TcHmiControl {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.TcHmi_Controls_Helpers_Editor .compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton,
+.TcHmi_Controls_Helpers_Editor .compound-control-container .TcHmi_Controls_Beckhoff_TcHmiCheckbox,
+.TcHmi_Controls_Helpers_Editor.compound-control-container .TcHmi_Controls_Beckhoff_TcHmiButton,
+.TcHmi_Controls_Helpers_Editor.compound-control-container .TcHmi_Controls_Beckhoff_TcHmiCheckbox {
+    flex-shrink: 0;
+}
+
+.TcHmi_Controls_Helpers_Editor .TcHmi_Controls_Beckhoff_TcHmiCombobox.type-combobox {
+    flex-basis: 70px;
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+
+.TcHmi_Controls_Helpers_Editor .choice-sub-editor {
+    flex-basis: 100%;
+}
+
+.TcHmi_Controls_Helpers_Editor .compound-control-container .value-description,
+.TcHmi_Controls_Helpers_Editor.compound-control-container .value-description {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 3px;
+}
+
+.TcHmi_Controls_Helpers_Editor .new-property-container {
+    display: none;
+    height: 30px;
+}
+
+.TcHmi_Controls_Helpers_Editor .new-property-container.show {
+    display: flex;
+}
+
+.TcHmi_Controls_Helpers_Editor .new-property-container .TcHmi_Controls_Beckhoff_TcHmiButton {
+    flex-shrink: 0;
+    margin-left: 5px;
+}
+
+.TcHmi_Controls_Helpers_Editor .new-property-container + .TcHmi_Controls_Beckhoff_TcHmiButton {
+    margin-left: 3px;
+    margin-bottom: 3px;
+}
+
+.TcHmi_Controls_Helpers_Editor .TcHmi_Controls_Helpers_DirectoryBrowser-path-display {
+    flex-grow: 1;
+    --tchmi-path-display-height: 31px;
+}
+
+.TcHmi_Controls_Helpers_Editor.disabled .TcHmi_Controls_Helpers_DirectoryBrowser-path-display::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table {
+    border-collapse: collapse;
+    margin-bottom: 3px;
+    min-width: 294px;
+    counter-reset: auto-increment-index -1;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td {
+    height: 30px;
+    padding: 3px;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td:empty {
+    padding: 0;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td.name-cell {
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td.name-cell.auto-increment-index::before {
+    counter-increment: auto-increment-index;
+    content: counter(auto-increment-index);
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td.value-cell {
+    width: 250px;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td.value-cell .TcHmi_Controls_System_TcHmiControl {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table td.remove-cell:not(:empty) {
+    padding-left: 5px;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table-buttons {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    padding: 0 3px 3px 3px;
+}
+
+.TcHmi_Controls_Helpers_Editor-editor-table-buttons .TcHmi_Controls_Beckhoff_TcHmiButton:not(:first-child) {
+    margin-left: 6px;
+}

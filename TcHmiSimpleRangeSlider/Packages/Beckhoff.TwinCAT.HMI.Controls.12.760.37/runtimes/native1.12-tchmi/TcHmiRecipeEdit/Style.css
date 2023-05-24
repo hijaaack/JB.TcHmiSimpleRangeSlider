@@ -1,0 +1,131 @@
+/** Styles for all themes */
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-template {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-browsing-pane,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-pane {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+    margin-top: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit:not(.editing) .TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-pane {
+    display: none;
+}
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit.editing .TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-browsing-pane {
+    display: none;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-template .TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-browsing-box,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-box {
+    flex-grow: 1;
+    margin-top: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 5px);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-container .TcHmi_Controls_Beckhoff_TcHmiButton {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-box {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area {
+    overflow: auto;
+    height: 100%;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: 30px;
+    border-width: 0px;
+    padding: 0;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area td {
+    padding: 0 3px;
+    height: 30px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area td.value-cell {
+    padding: 0;
+    width: 35%;
+}
+
+.TcHmi_Controls_Helpers_Popup-CreateRecipePrompt .TcHmi_Controls_Helpers_Popup-content {
+    width: 300px;
+}
+
+.TcHmi_Controls_Helpers_Popup-CreateRecipePrompt .TcHmi_Controls_Helpers_Popup-path-box {
+    display: inline-block;
+    width: calc(100% - 40px);
+}
+
+.TcHmi_Controls_Helpers_Popup-CreateRecipePrompt .TcHmi_Controls_Helpers_Popup-select-button {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.TcHmi_Controls_Helpers_Popup-SelectRecipeTypePrompt .TcHmi_Controls_Helpers_Popup-content,
+.TcHmi_Controls_Helpers_Popup-SelectRecipePrompt .TcHmi_Controls_Helpers_Popup-content {
+    width: 600px;
+    height: 400px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-scroll-container {
+    margin-top: 10px;
+    padding: 5px;
+    max-height: 270px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-content
+    > .TcHmi_Controls_Helpers_Popup-radio-row {
+    margin-top: 10px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-radio-row {
+    display: flex;
+    gap: 15px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-radio-row
+    > span {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}

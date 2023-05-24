@@ -1,0 +1,79 @@
+/** Styles for all themes */
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-template {
+    position: relative;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    display: grid;
+    grid-template:
+        'menu menu' 30px
+        'tree browsing' minmax(0, 1fr) / auto 1fr;
+    gap: 5px;
+    margin: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar {
+    grid-area: menu;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .TcHmi_Controls_Beckhoff_TcHmiButton {
+    position: relative;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-directory-tree {
+    grid-area: tree;
+    width: 200px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-browsing-area {
+    grid-area: browsing;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-path-box {
+    flex-shrink: 0;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-browsing-box {
+    flex-grow: 1;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-scroll-container {
+    margin-top: 10px;
+    padding: 5px;
+    max-height: 270px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-content
+    > .TcHmi_Controls_Helpers_Popup-radio-row {
+    margin-top: 10px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-radio-row {
+    display: flex;
+    gap: 15px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-radio-row
+    > span {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "TcHmi.Controls.System.TcHmiPopup": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiPopup",
+            "frameworkControlNamespace": "TcHmi.Controls.System"
+        },
+        "TcHmiPopup": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiPopup"
+        },
+        "TcHmi.Controls.System.TcHmiPopup.TargetFile": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "anyOf": [
+                        {
+                            "$ref": "tchmi:framework#/definitions/UserControlPath"
+                        },
+                        {
+                            "$ref": "tchmi:framework#/definitions/ContentPath"
+                        }
+                    ]
+                },
+                "attributes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": ["object", "array", "string", "boolean", "integer", "number"]
+                    }
+                }
+            },
+            "required": ["path"]
+        }
+    }
+}

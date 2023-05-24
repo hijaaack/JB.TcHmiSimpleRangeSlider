@@ -1,0 +1,68 @@
+.TcHmi_Controls_Helpers_Popup {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Helpers_Popup-content
+    .TcHmi_Controls_System_TcHmiControl:not(.TcHmi_Controls_System_TcHmiControl .TcHmi_Controls_System_TcHmiControl) {
+    position: relative;
+}
+
+.TcHmi_Controls_Helpers_Popup-header-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto min-content;
+    margin-top: 0px;
+    min-height: 26px;
+    padding: 5px 10px;
+}
+
+.TcHmi_Controls_Helpers_Popup-header-container > h1 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Helpers_Popup-content {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+.TcHmi_Controls_Helpers_Popup-label-block {
+    display: block;
+    white-space: pre;
+    margin-bottom: 2px;
+}
+
+.TcHmi_Controls_Helpers_Popup-label-block:not(:first-child) {
+    margin-top: 10px;
+}
+
+.TcHmi_Controls_Helpers_Popup-footer {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.TcHmi_Controls_Helpers_Popup-footer:not(:empty) {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.TcHmi_Controls_Helpers_Popup-footer .TcHmi_Controls_System_TcHmiControl {
+    position: relative;
+}
+
+.TcHmi_Controls_Helpers_Popup-footer .TcHmi_Controls_System_TcHmiControl:not(:first-child) {
+    margin-left: 5px;
+}
+
+.TcHmi_Controls_Helpers_Popup-TextAndButtonsPrompt .TcHmi_Controls_Helpers_Popup-content {
+    white-space: pre;
+}

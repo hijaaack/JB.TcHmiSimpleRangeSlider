@@ -1,0 +1,94 @@
+/** Styles for the theme: Base */
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer {
+    --tchmi-background: rgba(255, 255, 255, 0.5);
+    --tchmi-pane-background: #ffffff;
+    background-color: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-directory-tree,
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-browsing-box {
+    background-color: var(--tchmi-pane-background);
+    box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 3px 2px rgb(0 0 0 / 30%);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar
+    .button-create-folder
+    .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-folder_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar
+    .button-create-folder.down
+    .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-folder_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-download .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/download_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar
+    .button-download.down
+    .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/download_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-upload .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/upload_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-upload.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/upload_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-rename .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/rename_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-rename.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/rename_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-copy .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/copy_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-copy.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/copy_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-cut .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/cut_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-cut.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/cut_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-paste .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/paste_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-paste.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/paste_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-delete .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/delete_normal.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-menu-bar .button-delete.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/delete_pressed.svg');
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiFileExplorer-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-scroll-container {
+    --tchmi-pane-background: #ffffff;
+    box-shadow: inset 0px 0px 0px 1px rgb(0 0 0 / 2%), inset 0px 0px 3px 2px rgb(0 0 0 / 30%);
+    background: var(--tchmi-pane-background);
+}

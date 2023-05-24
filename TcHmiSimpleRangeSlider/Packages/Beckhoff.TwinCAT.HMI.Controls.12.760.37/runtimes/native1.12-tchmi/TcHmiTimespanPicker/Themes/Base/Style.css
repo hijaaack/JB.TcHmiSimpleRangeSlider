@@ -1,0 +1,39 @@
+/** Styles for the theme: Base */
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker,
+.tchmi-timespan-picker,
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-template-overlay,
+.tchmi-timespan-picker-template-overlay {
+    --tchmi-overlay-background: #ffffff;
+    --tchmi-background: rgba(255, 255, 255, 0.5);
+    --tchmi-color: #4794da;
+}
+
+.tchmi-system-topmostlayer-container .TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-template-overlay,
+.tchmi-system-topmostlayer-container .tchmi-timespan-picker-template-overlay {
+    box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.6);
+    background: var(--tchmi-overlay-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-template-label,
+.tchmi-timespan-picker-template-label {
+    color: var(--tchmi-color);
+    font-size: 12px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-template-overlay .TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.tchmi-timespan-picker-template-overlay .tchmi-textbox-template-border {
+    box-shadow: initial;
+}
+
+/** Show in View styles **/
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-direct-display
+    .TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-template-overlay,
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-direct-display .tchmi-timespan-picker-template-overlay {
+    box-shadow: none;
+    background: none;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-direct-display.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker,
+.TcHmi_Controls_Beckhoff_TcHmiTimespanPicker-direct-display.tchmi-timespan-picker {
+    background: var(--tchmi-background);
+}

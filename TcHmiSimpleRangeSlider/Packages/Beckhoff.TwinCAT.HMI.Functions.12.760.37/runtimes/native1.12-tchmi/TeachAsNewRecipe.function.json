@@ -1,0 +1,66 @@
+{
+    "$schema": "../TcHmiFramework/Schema/FunctionDescription.Schema.json",
+    "apiVersion": 1,
+    "version": {
+        "full": "1.12.760.37",
+        "major": 1,
+        "minor": 12,
+        "build": 760,
+        "revision": 37
+    },
+    "dependencyFiles": [
+        {
+            "name": "TeachAsNewRecipe.js",
+            "type": "JavaScript",
+            "description": ""
+        }
+    ],
+    "function": {
+        "name": "TeachAsNewRecipe",
+        "namespace": "TcHmi.Functions.Beckhoff",
+        "displayName": "TeachAsNewRecipe",
+        "visible": true,
+        "category": "Recipe",
+        "waitMode": "Asynchronous",
+        "injectContextObject": true,
+        "description": "Reads the current values which are referenced from a base recipe and write it into a new recipe.",
+        "returnValue": null,
+        "arguments": [
+            {
+                "name": "ctx",
+                "displayName": "ctx",
+                "type": "tchmi:framework#/definitions/ContextReference",
+                "description": "Context Reference",
+                "required": true,
+                "bindable": false
+            },
+            {
+                "name": "recipeReference",
+                "displayName": "recipeReference",
+                "type": "tchmi:framework#/definitions/RecipeReference",
+                "description": "Reference (path + '::' + name) of the recipe",
+                "defaultValue": null,
+                "required": true,
+                "bindable": true
+            },
+            {
+                "name": "newRecipeName",
+                "displayName": "newRecipeName",
+                "type": "tchmi:general#/definitions/String",
+                "description": "New name of the recipe",
+                "defaultValue": "newRecipe",
+                "required": true,
+                "bindable": true
+            },
+            {
+                "name": "newRecipePath",
+                "displayName": "newRecipePath",
+                "type": "tchmi:general#/definitions/String",
+                "description": "New path of the recipe",
+                "defaultValue": null,
+                "required": false,
+                "bindable": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+/** Styles for the theme: Base */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiTextbox,
+.tchmi-textbox {
+    --tchmi-background: #ffffff;
+    --tchmi-color: #4c6374;
+    background-color: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.tchmi-textbox-template-border {
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTextbox-template-input-container,
+.tchmi-textbox-template-input-container {
+    color: var(--tchmi-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTextbox-template-input:is(:focus, .tchmi-focus, .tchmi-keyboard-user-input) {
+    background: rgba(76, 99, 116, 0.05);
+    /* We are inside a border container here */
+    outline-offset: 0px;
+}

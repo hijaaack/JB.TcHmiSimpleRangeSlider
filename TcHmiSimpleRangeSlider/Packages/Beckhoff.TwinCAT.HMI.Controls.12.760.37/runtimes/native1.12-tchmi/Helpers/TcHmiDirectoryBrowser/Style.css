@@ -1,0 +1,89 @@
+.TcHmi_Controls_Helpers_DirectoryBrowser-path-display {
+    --tchmi-path-display-height: 35px;
+    position: relative;
+    height: var(--tchmi-path-display-height);
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-scroll-container {
+    margin-right: -20px;
+    height: calc(100% + 75px);
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list {
+    list-style: none;
+    display: inline-block;
+    height: 100%;
+    flex-shrink: 0;
+    margin: 0px;
+    margin-left: 3px;
+    padding: 3px 1px 3px 1px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li {
+    float: left;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a {
+    display: inline-block;
+    position: relative;
+    margin-right: calc((var(--tchmi-path-display-height) - 5px) / 3 * 2 + 3px);
+    height: calc(var(--tchmi-path-display-height) - 5px);
+    line-height: calc(var(--tchmi-path-display-height) - 5px);
+    padding: 0px calc(var(--tchmi-path-display-height) - 5px) 0px 2px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:before,
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:before {
+    left: calc((var(--tchmi-path-display-height) - 5px) / 3 * -2);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:after {
+    left: 100%;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:first-child a {
+    padding-left: 15px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:last-child a {
+    padding-right: calc(var(--tchmi-path-display-height) - 5px);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:last-child:not(:first-child) a {
+    padding-left: 2px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display {
+    list-style-type: none;
+    overflow: auto;
+    padding: 5px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li {
+    height: 35px;
+    padding: 3px 3px 3px 55px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

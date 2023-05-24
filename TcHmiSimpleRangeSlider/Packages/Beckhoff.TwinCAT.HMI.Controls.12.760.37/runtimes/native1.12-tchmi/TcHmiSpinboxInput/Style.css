@@ -1,0 +1,141 @@
+/** Styles for all themes */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput {
+    /* Prevent overflow if the border radius is huge */
+    overflow: visible;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template {
+    position: relative;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input {
+    border-radius: unset;
+    height: auto;
+    flex-grow: 1;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput-template-button-before,
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput-template-button-after {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 0px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput-template-button-before .button,
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput-template-button-after .button {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-left
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-right
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+/* styles for button plus */
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-left .button-plus {
+    height: 50%;
+    border-top-left-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.plus-left-minus-right
+    .button-plus {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-right .button-plus {
+    height: 50%;
+    border-top-right-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.minus-left-plus-right
+    .button-plus {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+/* styles for button minus */
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-left .button-minus {
+    height: 50%;
+    border-bottom-left-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.plus-left-minus-right
+    .button-minus {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.both-right
+    .button-minus {
+    height: 50%;
+    border-bottom-right-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.minus-left-plus-right
+    .button-minus {
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input-invalid-notification {
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.plus-top-minus-bottom,
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template.minus-top-plus-bottom {
+    flex-direction: column;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template:not(.both-left):not(.plus-top-minus-bottom):not(
+        .minus-top-plus-bottom
+    )
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input-invalid-notification {
+    right: 26px; /* same size as button-plus (flex-basis: 26px;) */
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiSpinboxInput
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template:not(.both-left):not(.plus-top-minus-bottom):not(
+        .minus-top-plus-bottom
+    )
+    .TcHmi_Controls_Beckhoff_TcHmiNumericInput-template-input-invalid-notification.invalid-notification-alignment-left {
+    left: 26px; /* same size as button-plus (flex-basis: 26px;) */
+}

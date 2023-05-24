@@ -1,0 +1,167 @@
+.TcHmi_Controls_Helpers_DirectoryBrowser-path-display {
+    --tchmi-background-color: #2a3845;
+    --tchmi-text-color: #2775be;
+    --tchmi-item-color: #1b1b1f;
+    --tchmi-active-text-color: #ffffff;
+    --tchmi-active-item-color: #2775be;
+    --tchmi-hover-color: #2b2b2c;
+    background-color: var(--tchmi-background-color);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a {
+    color: var(--tchmi-text-color);
+    background: var(--tchmi-item-color);
+    text-decoration: none;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: calc(var(--tchmi-path-display-height) - 5px);
+    background-position: right center;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li.folder a {
+    background-image: url('Images/folder.svg');
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li.file a {
+    background-image: url('Images/file.svg');
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:nth-child(even) a {
+    background-color: var(--tchmi-item-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:nth-child(even) a:before {
+    border-color: var(--tchmi-item-color);
+    border-left-color: transparent;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:nth-child(even) a:after {
+    border-left-color: var(--tchmi-item-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:first-child a {
+    border-radius: 4px 0 0 4px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:first-child a:before {
+    border: none;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:last-child a {
+    border-radius: 0 4px 4px 0;
+    background-color: var(--tchmi-active-item-color);
+    color: var(--tchmi-active-text-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li.folder:last-child a {
+    background-image: url('Images/folder_active.svg');
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li.file:last-child a {
+    background-image: url('Images/file_active.svg');
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:last-child a:after {
+    border: none;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:before,
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:after {
+    border: 0 solid var(--tchmi-item-color);
+    border-width: calc((var(--tchmi-path-display-height) - 5px) / 2)
+        calc((var(--tchmi-path-display-height) - 5px) / 3 + 1px);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:last-child a:before {
+    border-color: var(--tchmi-active-item-color);
+    border-left-color: transparent;
+    color: var(--tchmi-active-text-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:before {
+    border-left-color: transparent;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li a:after {
+    border-color: transparent;
+    border-left-color: var(--tchmi-item-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:not(:last-child) a:hover {
+    background-color: var(--tchmi-hover-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:not(:last-child) a:hover:before {
+    border-color: var(--tchmi-hover-color);
+    border-left-color: transparent;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-path-display-item-list li:not(:last-child) a:hover:after {
+    border-left-color: var(--tchmi-hover-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display {
+    --tchmi-item-background: #1b1b1f;
+    --tchmi-text-color: #ffffff;
+    --tchmi-item-hover-background: #2b2b2c;
+    --tchmi-item-active-background: #2775be;
+    --tchmi-active-text-color: #ffffff;
+    --tchmi-metadata-text-color: #a3b0bb;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li {
+    background-color: var(--tchmi-item-background);
+    color: var(--tchmi-text-color);
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: 0px -10px;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li span {
+    color: var(--tchmi-metadata-text-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li:hover {
+    background-color: var(--tchmi-item-hover-background);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.selected,
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.current {
+    background-color: var(--tchmi-item-active-background);
+    color: var(--tchmi-active-text-color);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.folder {
+    background-image: url(Images/folder.svg);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.folder[data-is-parent='true'] {
+    background-image: url(Images/parent_folder.svg);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.folder.selected,
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.folder.current {
+    background-image: url(Images/folder_active.svg);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.file {
+    background-image: url(Images/file.svg);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.file.selected,
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.file.current {
+    background-image: url(Images/file_active.svg);
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.dragging {
+    background-color: var(--tchmi-item-active-background);
+    color: var(--tchmi-active-text-color);
+    opacity: 0.5;
+}
+
+ul.TcHmi_Controls_Helpers_DirectoryBrowser-browsing-display li.drop-zone {
+    background-color: var(--tchmi-item-active-background);
+    color: var(--tchmi-active-text-color);
+}

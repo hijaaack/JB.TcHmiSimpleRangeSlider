@@ -1,29 +1,27 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>JB.TcHmiSimpleRangeSlider</id>
-    <version>1.0.0</version>
-    <title>TcHmiSimpleRangeSlider</title>
+    <version>1.1.0</version>
+    <description>Simple Range Slider</description>
     <authors>Jack Borelius</authors>
+    <title>TcHmiSimpleRangeSlider</title>
     <owners>Jack Borelius</owners>
     <projectUrl>https://github.com/hijaaack/JB.TcHmiSimpleRangeSlider</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>Updated packages to 760.37 and disabled the new SystemKeyboard to be triggered when using this control.</releaseNotes>
+    <copyright>Copyright 2023</copyright>
+    <tags>TwinCAT HMI</tags>
     <license type="expression">MIT</license>
     <icon>images/logo.png</icon>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Simple Range Slider</description>
-    <releaseNotes>First release v1.0.0</releaseNotes>
-    <copyright>Copyright 2021</copyright>
-    <tags>TwinCAT HMI</tags>
     <dependencies>
       <group targetFramework="native1.12-tchmi">
-        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="12.750.1" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="12.760.37" />
       </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="**\*"
-          target="runtimes\native1.12-tchmi\"
-          exclude=".eslintrc.json;**\*.nuspec;**\*.tpl.json;**\*.hmi*proj;**\~*;**\*.tmp;**\tmp*;**\*.user;**\tsconfig.json;**\*.log;**\*.bak;**\obj\**\*;packages.config;packages.xsd;.hmiframework\**\*;.hmipkgs\**\*;.git;.gitignore;.gitattributes" />
+    <file src="**\*" target="runtimes\native1.12-tchmi\" exclude=".eslintrc.json;**\*.nuspec;**\*.tpl.json;**\*.hmi*proj;**\~*;**\*.tmp;**\tmp*;**\*.user;**\tsconfig.json;**\*.log;**\*.bak;**\obj\**\*;packages.config;packages.xsd;.hmiframework\**\*;.hmipkgs\**\*;.git;.gitignore;.gitattributes" />
     <file src="images\logo.png" target="images\" />
   </files>
 </package>

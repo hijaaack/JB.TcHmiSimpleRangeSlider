@@ -1,0 +1,19 @@
+/** Styles for the theme: Base */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiInput {
+    --tchmi-background: #ffffff;
+    --tchmi-color: #4c6374;
+    background-color: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiInput-template-input {
+    -webkit-appearance: none; /* Important to have visible box-shadow on input elements in iOS/Safari.  */
+    appearance: none;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    color: var(--tchmi-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiInput-template-input:is(:focus, .tchmi-focus, .tchmi-keyboard-user-input) {
+    background: rgba(76, 99, 116, 0.05);
+}

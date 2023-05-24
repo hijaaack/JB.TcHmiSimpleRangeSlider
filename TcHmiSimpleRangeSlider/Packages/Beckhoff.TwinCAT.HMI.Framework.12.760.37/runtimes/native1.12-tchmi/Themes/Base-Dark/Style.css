@@ -1,0 +1,16 @@
+.tchmi-system-topmostlayer-root-container.tchmi-topmostlayer-background-dim {
+    background-color: rgba(180, 180, 180, 0.5);
+}
+
+input,
+button {
+    /* Do not change scheme for all native html inputs and buttons.
+     * Styled inputs (like in our controls) are not affected by this.
+     */
+    color-scheme: initial;
+}
+
+html {
+    /* Make our scrollbars dark. */
+    color-scheme: dark;
+}

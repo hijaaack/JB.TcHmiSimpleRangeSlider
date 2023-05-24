@@ -1,0 +1,49 @@
+/** Styles for the theme: Base-Dark */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput {
+    --tchmi-background: #2a3845;
+    --tchmi-color: #ffffff;
+    background-color: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template {
+    grid-template-columns: auto 26px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template.left {
+    grid-template-columns: 26px auto;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-input {
+    -webkit-appearance: none; /* Important to have visible box-shadow on input elements in iOS/Safari.  */
+    appearance: none;
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    color: var(--tchmi-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput .TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-button {
+    background-image: url(Images/timespanpicker_normal.svg), linear-gradient(135deg, #3580c7, #1960a3);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput .TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-button:active {
+    background-image: url(Images/timespanpicker_pressed.svg), linear-gradient(135deg, #1960a3, #3580c7);
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-input:is(:focus, .tchmi-focus, .tchmi-keyboard-user-input) {
+    background: rgba(76, 99, 116, 0.05);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-input:invalid {
+    box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 7px 3px rgba(255, 0, 0, 0.3);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTimespanInput-template-input-invalid-notification {
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+}

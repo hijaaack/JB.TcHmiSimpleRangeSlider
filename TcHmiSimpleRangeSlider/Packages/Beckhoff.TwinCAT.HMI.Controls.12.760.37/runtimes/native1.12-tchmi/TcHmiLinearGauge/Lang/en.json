@@ -1,0 +1,8 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "en",
+    "localizedText": {
+        "Tooltip_LessThanMin_Text": "The current value is less than the minimum: {0}",
+        "Tooltip_GreaterThanMax_Text": "The current value is greater than the maximum: {0}"
+    }
+}

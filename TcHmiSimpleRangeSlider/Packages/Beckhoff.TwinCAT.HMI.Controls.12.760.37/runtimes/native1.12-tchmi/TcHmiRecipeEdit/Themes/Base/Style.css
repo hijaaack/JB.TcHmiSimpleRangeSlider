@@ -1,0 +1,252 @@
+/** Styles for the theme: Base */
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup {
+    --tchmi-control-background: rgba(255, 255, 255, 0.5);
+    --tchmi-pane-background: #ffffff;
+    --tchmi-header-background: #4794da;
+    --tchmi-seperator-background: #4c6374;
+    --tchmi-cell-background: #ffffff;
+    --tchmi-selected-background: #d7d7d9;
+    --tchmi-highlight-background: linear-gradient(to bottom right, #4994da, #4162b0);
+    --tchmi-highlight-background-pressed: linear-gradient(to bottom right, #4162b0, #4994da);
+    --tchmi-invalid-background: linear-gradient(to bottom right, #f52833, #c01013);
+    --tchmi-invalid-background-pressed: linear-gradient(to bottom right, #c01013, #f52833);
+    --tchmi-text-color: #4c6374;
+    --tchmi-contrasting-text-color: #ffffff;
+    --tchmi-disabled-text-color: #c0c0c5;
+    --tchmi-cell-border-color: #ededed;
+    --tchmi-inset-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+    --tchmi-inset-shadow-invalid: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.02), inset 0px 0px 3px 2px rgba(0, 0, 0, 0.3),
+        inset 0px 0px 7px 3px rgba(255, 0, 0, 0.3);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit {
+    background: var(--tchmi-control-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-browsing-box,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-box {
+    background: var(--tchmi-pane-background);
+    box-shadow: var(--tchmi-inset-shadow);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area th {
+    background: var(--tchmi-header-background);
+    color: var(--tchmi-contrasting-text-color);
+    border-right: 1px solid var(--tchmi-cell-border-color);
+    font-weight: normal;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area th:last-child {
+    border-right-color: var(--tchmi-header-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area td {
+    background: var(--tchmi-cell-background);
+    color: var(--tchmi-text-color);
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: var(--tchmi-cell-border-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area td:first-child {
+    border-left: 1px solid;
+    border-color: var(--tchmi-cell-border-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area td[colspan='6'] {
+    background: var(--tchmi-seperator-background);
+    color: var(--tchmi-contrasting-text-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiCombobox-template-select,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiCombobox-template-select {
+    box-shadow: var(--tchmi-inset-shadow-invalid);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area div.with-validation.invalid .TcHmi_Controls_Beckhoff_TcHmiButton,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup div.with-validation.invalid .TcHmi_Controls_Beckhoff_TcHmiButton {
+    --tchmi-background: var(--tchmi-invalid-background);
+    --tchmi-background-pressed: var(--tchmi-invalid-background-pressed);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiTextbox-template-border,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiCombobox-template-select,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiCombobox-template-select {
+    box-shadow: var(--tchmi-inset-shadow);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-editing-area
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiButton,
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup
+    .disabled
+    div.with-validation.invalid
+    .TcHmi_Controls_Beckhoff_TcHmiButton {
+    --tchmi-background: var(--tchmi-highlight-background);
+    --tchmi-background-pressed: var(--tchmi-highlight-background-pressed);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-popup.TcHmi_Controls_Helpers_Popup-FileConflictPrompt
+    .TcHmi_Controls_Helpers_Popup-scroll-container {
+    background: var(--tchmi-pane-background);
+    box-shadow: var(--tchmi-inset-shadow);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-create-folder .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-folder.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-create-folder.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-folder_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-create-recipe .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-recipe.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-create-recipe.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/create-recipe_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-rename .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/rename.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-rename.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/rename_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-copy .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/copy.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-copy.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/copy_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-cut .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/cut.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-cut.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/cut_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-paste .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/paste.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-paste.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/paste_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-delete .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/delete.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-delete.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/delete_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-activate-recipe .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/activate-recipe.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-activate-recipe.down
+    .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/activate-recipe_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-teach-recipe .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/teach-recipe.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-teach-recipe.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/teach-recipe_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-save .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/save.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-save.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/save_active.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-exit .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/exit.svg');
+    background-position: center;
+    background-size: contain;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiRecipeEdit-button-icon-exit.down .TcHmi_Controls_Beckhoff_TcHmiButton-template {
+    background-image: url('Images/exit_active.svg');
+    background-position: center;
+    background-size: contain;
+}

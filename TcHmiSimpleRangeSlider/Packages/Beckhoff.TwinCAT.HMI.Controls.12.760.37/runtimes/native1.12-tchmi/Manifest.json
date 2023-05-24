@@ -1,0 +1,434 @@
+{
+    "$schema": "../TcHmiFramework/Schema/Manifest.Schema.json",
+    "apiVersion": 1,
+    "modules": [
+        {
+            "type": "Package",
+            "nugetId": "Beckhoff.TwinCAT.HMI.Framework"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiCallbackManager/TcHmiCallbackManager.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiContentTabs/TcHmiContentTabs.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiContentTabs/Style.css"
+        },
+        {
+            "type": "Resource",
+            "theme": "Base",
+            "component": "ContentTabs",
+            "path": "./Helpers/TcHmiContentTabs/Themes/Base/Style.css"
+        },
+        {
+            "type": "Resource",
+            "theme": "Base-Dark",
+            "component": "ContentTabs",
+            "path": "./Helpers/TcHmiContentTabs/Themes/Base-Dark/Style.css"
+        },
+        {
+            "type": "Resource",
+            "path": "./TcHmiCharting/TcHmiCharting.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiDirectoryBrowser/TcHmiDirectoryBrowser.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Themes/Base/Style.css",
+            "component": "General",
+            "theme": "Base"
+        },
+        {
+            "type": "Resource",
+            "path": "./Themes/Base-Dark/Style.css",
+            "component": "General",
+            "theme": "Base-Dark"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiDirectoryBrowser/Style.css"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiDirectoryBrowser/Themes/Base/Style.css",
+            "component": "DirectoryBrowser",
+            "theme": "Base"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiDirectoryBrowser/Themes/Base-Dark/Style.css",
+            "component": "DirectoryBrowser",
+            "theme": "Base-Dark"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiPopups/TcHmiPopups.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiPopups/Style.css"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiPopups/Themes/Base/Style.css",
+            "component": "Popups",
+            "theme": "Base"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiPopups/Themes/Base-Dark/Style.css",
+            "component": "Popups",
+            "theme": "Base-Dark"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiJsonEditors/TcHmiJsonEditors.js"
+        },
+        {
+            "type": "Resource",
+            "path": "./Helpers/TcHmiJsonEditors/Style.css"
+        },
+        {
+            "type": "Resource",
+            "component": "TcHmiJsonEditors",
+            "path": "./Helpers/TcHmiJsonEditors/Themes/Base/Style.css",
+            "theme": "Base"
+        },
+        {
+            "type": "Resource",
+            "component": "TcHmiJsonEditors",
+            "path": "./Helpers/TcHmiJsonEditors/Themes/Base-Dark/Style.css",
+            "theme": "Base-Dark"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiButton",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiToggleButton",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiBarChart",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:210"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiCheckbox",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiCombobox",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiDatagrid",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiDateTimeInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiDateTimePicker",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiEllipse",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:220"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiEventGrid",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:240"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiEventLine",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:240"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiFileExplorer",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiHorizontalBarChart",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:210"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiIFrame",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:230"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiImage",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:230"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiKeyboard",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Resource",
+            "path": "UiProvider/TcHmiKeyboard/TcHmiKeyboard.js"
+        },
+        {
+            "type": "Resource",
+            "path": "UiProvider/TcHmiPopups/TcHmiPopups.js"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiLine",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:220"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiLinearGauge",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiLineChart",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:210"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiPolygon",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:220"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiPolyline",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:220"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiRadialGauge",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiRadioButton",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiRectangle",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:220"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTachometer",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTextblock",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTextbox",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTimespanInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTimespanPicker",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTrendLineChart",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:210"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiVideo",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:230"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiRecipeSelect",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiThemeSelect",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiLocalizationSelect",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiDateTimeDisplay",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiToggleSwitch",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiNumericInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiPasswordInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiSpinboxInput",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiAudio",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:230"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiStateImage",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:230"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiRecipeEdit",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiAdsState",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:240"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiUserManagement",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTreeView",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiObjectBrowser",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Control",
+            "basePath": "TcHmiTabNavigation",
+            "descriptionFile": "Description.json",
+            "toolboxCategory": "Beckhoff.TwinCAT.HMI.Controls:200"
+        },
+        {
+            "type": "Function",
+            "basePath": "",
+            "descriptionFile": "EventClassesProvider.function.json"
+        }
+    ],
+    "provideMetadata": {
+        "toolbox": {
+            "Beckhoff.TwinCAT.HMI.Controls": {
+                "200": "Common",
+                "210": "Charts",
+                "220": "Shapes",
+                "230": "Media",
+                "240": "TwinCAT"
+            }
+        }
+    },
+    "uiProvider": [
+        {
+            "type": "keyboard",
+            "name": "Beckhoff.TcHmiKeyboard",
+            "projectBasedKeyboardFiles": true,
+            "projectBasedKeyboardFileExt": ".keyboard.json"
+        },
+        {
+            "type": "popup",
+            "name": "Beckhoff.TcHmiPopups"
+        }
+    ]
+}

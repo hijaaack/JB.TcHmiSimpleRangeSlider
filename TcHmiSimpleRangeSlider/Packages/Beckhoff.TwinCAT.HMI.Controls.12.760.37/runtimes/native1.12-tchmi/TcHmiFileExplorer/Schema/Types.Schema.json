@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "TcHmi.Controls.Beckhoff.TcHmiFileExplorer": {
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiFileExplorer",
+            "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiFileExplorer.MenuBarPosition": {
+            "type": "string",
+            "enum": ["Top", "Bottom"],
+            "default": "Top"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiFileExplorer.NameArray": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minLength": 1
+            }
+        },
+        "TcHmiFileExplorer": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiFileExplorer"
+        }
+    }
+}

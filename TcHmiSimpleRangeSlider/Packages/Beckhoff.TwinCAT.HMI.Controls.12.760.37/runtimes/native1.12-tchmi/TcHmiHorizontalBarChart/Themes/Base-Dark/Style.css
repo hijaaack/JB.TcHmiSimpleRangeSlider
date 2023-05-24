@@ -1,0 +1,34 @@
+/** Styles for the theme: Base-Dark */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart {
+    --tchmi-background: #1b1b1f;
+    --tchmi-color: #ffffff;
+    --tchmi-background-chart: #2b2b2c;
+    --tchmi-background-legend: #2b2b2c;
+    background: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart-template {
+    /*background: rgba(255, 255, 255, 0.5);*/
+    background: transparent;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart-template-chart {
+    background: var(--tchmi-background-chart);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart-template-legend {
+    background: var(--tchmi-background-legend);
+    color: var(--tchmi-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart-template-legend-checkbox {
+    appearance: none;
+    background: #2a3845;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiHorizontalBarChart-template-legend-checkbox:checked {
+    background-image: url(Images/checkbox.svg), linear-gradient(135deg, #4089cb, #2775be 40%);
+    background-size: 13px 13px;
+}

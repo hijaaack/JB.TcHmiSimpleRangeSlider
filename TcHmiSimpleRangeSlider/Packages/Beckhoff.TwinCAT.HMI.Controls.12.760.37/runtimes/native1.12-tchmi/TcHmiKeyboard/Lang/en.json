@@ -1,0 +1,7 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "en",
+    "localizedText": {
+        "Engineering_Not_Configured": "No configured LayoutFile.<br>Please add a keyboard layout to the project and set the LayoutFile attribute."
+    }
+}

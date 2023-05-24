@@ -1,0 +1,100 @@
+/* Theme dependend control CSS*/
+/*Base-Dark Theme*/
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement,
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-Dropdown,
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup {
+    --tchmi-background: #1b1b1f;
+    --tchmi-background-pressed: #1b1b1f;
+    --tchmi-text-color: #ffffff;
+    --tchmi-text-color-pressed: #e4e9ed;
+    --tchmi-button-background: linear-gradient(135deg, #3580c7, #1960a3);
+    --tchmi-button-background-pressed: linear-gradient(135deg, #1960a3, #3580c7);
+    --tchmi-arrow-stroke: #ffffff;
+    --tchmi-arrow-stroke-pressed: #ffffff;
+    --tchmi-popup-background: #1b1b1f;
+    --tchmi-popup-color: #ffffff;
+    --tchmi-popup-cancel-color: #e30613;
+    --tchmi-popup-shadow: rgba(89, 89, 89, 0.75);
+    --tchmi-dropdown-background: #2b2b2c;
+    --tchmi-dropdown-background-hover: #2775be;
+    --tchmi-dropdown-text-color: #ffffff;
+    --tchmi-dropdown-text-color-hover: #ffffff;
+    background: var(--tchmi-background);
+    box-shadow: rgba(0, 0, 0, 0.208) 1px 1px 2px 0px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement
+    .TcHmi_Controls_Beckhoff_TcHmiUserManagement-Template
+    .TcHmi_Controls_Beckhoff_TcHmiUserManagement-button {
+    stroke: var(--tchmi-arrow-stroke);
+    background: var(--tchmi-button-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement.down {
+    background: var(--tchmi-background-pressed);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement.down
+    .TcHmi_Controls_Beckhoff_TcHmiUserManagement-Template
+    .TcHmi_Controls_Beckhoff_TcHmiUserManagement-button {
+    stroke: var(--tchmi-arrow-stroke-pressed);
+    background: var(--tchmi-button-background-pressed);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement .TcHmi_Controls_Beckhoff_TcHmiUserManagement-Base {
+    color: var(--tchmi-text-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement.down .TcHmi_Controls_Beckhoff_TcHmiUserManagement-Base {
+    color: var(--tchmi-text-color-pressed);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup {
+    background: var(--tchmi-popup-background);
+    color: var(--tchmi-popup-color);
+    box-shadow: 0px 0px 6px 1px var(--tchmi-popup-shadow);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup svg {
+    stroke: var(--tchmi-popup-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup-header-x.down {
+    background: var(--tchmi-popup-cancel-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-Dropdown {
+    background: var(--tchmi-dropdown-background);
+    box-shadow: inset -7px 0px 6px -7px rgba(0, 0, 0, 0.6), inset 7px 0px 6px -7px rgba(0, 0, 0, 0.6),
+        inset 0px -7px 6px -7px rgba(0, 0, 0, 0.6);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-Dropdown.above-control {
+    box-shadow: inset -7px 0px 6px -7px rgba(0, 0, 0, 0.6), inset 7px 0px 6px -7px rgba(0, 0, 0, 0.6),
+        inset 0px 7px 6px -7px rgba(0, 0, 0, 0.6);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-Dropdown-Element {
+    color: var(--tchmi-dropdown-text-color);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-Dropdown-Element:hover {
+    background: var(--tchmi-dropdown-background-hover);
+    color: var(--tchmi-dropdown-text-color-hover);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-button {
+    width: 48px;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup-groups[data-scroll='top'] {
+    box-shadow: inset 0 -5px 10px 0 rgba(221, 221, 221, 0.05);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup-groups[data-scroll='center'] {
+    box-shadow: inset 0 5px 10px 0 rgba(221, 221, 221, 0.05), inset 0 -5px 5px 0 rgba(221, 221, 221, 0.05);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiUserManagement-template-popup-groups[data-scroll='bottom'] {
+    box-shadow: inset 0 5px 10px 0 rgba(221, 221, 221, 0.05);
+}

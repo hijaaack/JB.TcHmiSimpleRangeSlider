@@ -1,0 +1,367 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "ChartBarGraphColorList": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphColorList"
+        },
+        "ChartBarGraphDataDefinitionList": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphDataDefinitionList"
+        },
+        "ChartBarGraphPosition": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphPosition"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiBarChart",
+            "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphColorList": {
+            "title": "ChartBarGraphColorList",
+            "engineeringDefaultDatatype": 0,
+            "anyOf": [
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "tchmi:framework#/definitions/SolidColor"
+                    }
+                },
+                {
+                    "$ref": "tchmi:framework#/definitions/SolidColor"
+                }
+            ]
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphDataDefinitionList": {
+            "title": "ChartBarGraphDataDefinitionList",
+            "engineeringDefaultDatatype": 0,
+            "anyOf": [
+                {
+                    "type": "array",
+                    "title": "Array<Array<number>>",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    }
+                },
+                {
+                    "type": "array",
+                    "title": "Array<number>",
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            ]
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphPosition": {
+            "title": "ChartBarGraphPosition",
+            "type": "string",
+            "enum": ["Left", "Right"],
+            "default": "Left"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphDescriptionDefinitionList": {
+            "title": "ChartBarGraphDescriptionDefinitionList",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "engineeringColumns": ["legendName"],
+                "propertiesMeta": [
+                    {
+                        "name": "barColor",
+                        "displayName": "Bar color",
+                        "category": "Colors",
+                        "displayPriority": 10,
+                        "description": "Color for this bars",
+                        "defaultValue": {
+                            "color": "#2775be"
+                        },
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "legendName",
+                        "category": "General",
+                        "displayName": "Legend name",
+                        "displayPriority": 10,
+                        "description": "The name that is displayed in the legend.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "scaleFactor",
+                        "category": "General",
+                        "displayName": "Scale factor",
+                        "displayPriority": 10,
+                        "description": "Scales all values with this scale factor.",
+                        "defaultValue": null,
+                        "defaultValueInternal": 1
+                    },
+                    {
+                        "name": "colorRanges",
+                        "category": "General",
+                        "displayName": "Bar color ranges",
+                        "displayPriority": 10,
+                        "description": "An array of colors to be used in different ranges.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    }
+                ],
+                "properties": {
+                    "barColor": {
+                        "$ref": "tchmi:framework#/definitions/SolidColor"
+                    },
+                    "legendName": {
+                        "type": "string"
+                    },
+                    "scaleFactor": {
+                        "type": "number"
+                    },
+                    "colorRanges": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "color": {
+                                    "$ref": "tchmi:framework#/definitions/SolidColor"
+                                },
+                                "expression": {
+                                    "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarColorFilter"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarColorFilter": {
+            "title": "ChartBarColorFilter",
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "type": "object",
+                        "properties": {
+                            "path": {
+                                "type": "string",
+                                "enum": ["{value}"],
+                                "default": "{value}"
+                            },
+                            "comparator": {
+                                "type": "string",
+                                "enum": ["==", "!=", "<", ">", "<=", ">="],
+                                "default": "=="
+                            },
+                            "value": {
+                                "type": "number"
+                            }
+                        },
+                        "required": ["path", "comparator", "value"]
+                    },
+                    {
+                        "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarColorFilter"
+                    }
+                ]
+            }
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartBarGraphArrangement": {
+            "title": "ChartBarGraphArrangement",
+            "type": "string",
+            "enum": ["Overlapped", "Clustered", "Stacked"],
+            "default": "Overlapped"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartAxisLabeling": {
+            "title": "ChartAxisLabeling",
+            "type": "string",
+            "enum": ["Number", "Scientific", "Auto"],
+            "default": "Number"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartReferenceLineDefinition": {
+            "title": "ChartReferenceLineDefinition",
+            "type": "object",
+            "engineeringColumns": ["name", "value", "orientation"],
+            "propertiesMeta": [
+                {
+                    "name": "show",
+                    "category": "General",
+                    "displayName": "Show",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": true
+                },
+                {
+                    "name": "name",
+                    "category": "General",
+                    "displayName": "Name",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": ""
+                },
+                {
+                    "name": "orientation",
+                    "category": "General",
+                    "displayName": "Orientation",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": "Horizontal"
+                },
+                {
+                    "name": "value",
+                    "category": "General",
+                    "displayName": "Value",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": 0
+                },
+                {
+                    "name": "color",
+                    "category": "Colors",
+                    "displayName": "Color",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": "%tr%Control::TcHmi.Controls.Beckhoff.TcHmiBarChart::ReferenceLineColor%/tr%",
+                    "defaultValueInternal": {
+                        "color": "#4794da"
+                    }
+                },
+                {
+                    "name": "lineWidth",
+                    "category": "General",
+                    "displayName": "Line width",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": 1
+                },
+                {
+                    "name": "showLabel",
+                    "category": "General",
+                    "displayName": "Show label",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": true
+                },
+                {
+                    "name": "labelHorizontalAlignment",
+                    "category": "General",
+                    "displayName": "Label horizontal alignment",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": "Right"
+                },
+                {
+                    "name": "labelVerticalAlignment",
+                    "category": "General",
+                    "displayName": "Label vertical alignment",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": "Top"
+                },
+                {
+                    "name": "labelFontFamily",
+                    "category": "General",
+                    "displayName": "Label font-family",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": null
+                },
+                {
+                    "name": "labelFontSize",
+                    "category": "General",
+                    "displayName": "Label font-size",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": 12
+                },
+                {
+                    "name": "labelFontSizeUnit",
+                    "refTo": "labelFontSize",
+                    "category": "General",
+                    "displayName": "Label font-size unit",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": "px"
+                },
+                {
+                    "name": "labelFontWeight",
+                    "category": "General",
+                    "displayName": "Label font-weight",
+                    "displayPriority": 10,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": "Auto"
+                }
+            ],
+            "properties": {
+                "show": {
+                    "type": "boolean"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "orientation": {
+                    "type": "string",
+                    "enum": ["Horizontal", "Vertical"]
+                },
+                "value": {
+                    "type": "number"
+                },
+                "color": {
+                    "$ref": "tchmi:framework#/definitions/SolidColor"
+                },
+                "lineWidth": {
+                    "type": "number"
+                },
+                "showLabel": {
+                    "type": "boolean"
+                },
+                "labelHorizontalAlignment": {
+                    "$ref": "tchmi:framework#/definitions/HorizontalAlignment"
+                },
+                "labelVerticalAlignment": {
+                    "$ref": "tchmi:framework#/definitions/VerticalAlignment"
+                },
+                "labelFontFamily": {
+                    "$ref": "tchmi:framework#/definitions/FontFamily"
+                },
+                "labelFontSize": {
+                    "$ref": "tchmi:framework#/definitions/MeasurementValue"
+                },
+                "labelFontSizeUnit": {
+                    "$ref": "tchmi:framework#/definitions/PixelUnit"
+                },
+                "labelFontWeight": {
+                    "$ref": "tchmi:framework#/definitions/FontWeight"
+                }
+            },
+            "required": ["name", "value", "orientation"]
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartReferenceLineDefinitionList": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "title": "ChartReferenceLineDefinitionList",
+            "type": "array",
+            "items": {
+                "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartReferenceLineDefinition"
+            }
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiBarChart.ChartReferenceLinesPosition": {
+            "title": "ChartReferenceLinesPosition",
+            "type": "string",
+            "enum": ["Background", "Foreground"],
+            "default": "Background"
+        },
+        "TcHmiBarChart": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiBarChart"
+        }
+    }
+}

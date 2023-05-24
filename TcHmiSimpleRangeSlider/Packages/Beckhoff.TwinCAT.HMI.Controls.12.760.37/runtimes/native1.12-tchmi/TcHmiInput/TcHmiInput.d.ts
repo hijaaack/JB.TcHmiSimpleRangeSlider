@@ -1,0 +1,370 @@
+declare module TcHmi.Controls.Beckhoff {
+    class TcHmiInput extends TcHmi.Controls.System.TcHmiControl {
+        #private;
+        constructor(element: JQuery, pcElement: JQuery, attrs: TcHmi.Controls.ControlAttributeList);
+        /** Reference to the root dom element of the current control template as HTMLElement object. */
+        protected __elementTemplateRoot: HTMLElement;
+        /** Reference to the underlying html text textarea or input element as HTMLInputElement object. */
+        protected __elementInput: HTMLInputElement;
+        /**
+         * Is set to true if the control is locked and to false if the control is unlocked.
+         * When the control is locked, calls to setText are ignored.
+         */
+        protected __locked: boolean;
+        /**  Internal reference to the attribute "data-tchmi-text" */
+        protected __text: string | undefined;
+        /**  Internal reference to the attribute "data-tchmi-system-keyboard-input-mode" */
+        protected __systemKeyboardInputMode: TcHmi.Keyboard.KeyboardInputMode | undefined;
+        /**  Internal reference to the attribute "data-tchmi-ignore-escape-sequences" */
+        protected __ignoreEscapeSequences: boolean | undefined;
+        /** Text at focusin time */
+        protected __oldText: string | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-horizontal-alignment */
+        protected __textHorizontalAlignment: TcHmi.HorizontalAlignment | null | undefined;
+        /** Internal reference to the attribute "data-tchmi-content-padding" */
+        protected __contentPadding: TcHmi.FourSidedCss | null | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-font-size" */
+        protected __textFontSize: number | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-font-size-unit" */
+        protected __textFontSizeUnit: FontSizeUnit | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-font-family" */
+        protected __textFontFamily: FontFamily | null | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-font-style" */
+        protected __textFontStyle: FontStyle | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-font-style" */
+        protected __textFontWeight: FontWeight | undefined;
+        /** Internal reference to the attribute "data-tchmi-placeholder" */
+        protected __placeholder: string | null | undefined;
+        /** Internal reference to the attribute "data-tchmi-text-color" */
+        protected __textColor: TcHmi.SolidColor | null | undefined;
+        /** Internal reference to the attribute "data-tchmi-auto-focus-out" */
+        protected __autoFocusOut: boolean | undefined;
+        /** Internal reference to the attribute "data-tchmi-auto-select-text" */
+        protected __autoSelectText: boolean | undefined;
+        /** Interaction has started so we should raise event after it. */
+        protected __triggerUIFinishedOnBlur: boolean;
+        protected __restoreUserInputOnLoad: boolean | undefined;
+        protected __dataPrecedence: TcHmi.DataPrecedence | undefined;
+        protected __userInput: TcHmiInput.UserInput | null;
+        protected __storage: LocalStorage<{
+            userInput: TcHmiInput.UserInput;
+        }> | undefined;
+        /**
+         * If raised, the control object exists in control cache and constructor of each inheritation level was called.
+         */
+        __previnit(): void;
+        /**
+         * If raised, all attributes have been set to it's default or dom values.
+         */
+        __init(): void;
+        /**
+         * Is called by the system after the control instance gets part of the current DOM.
+         * Is only allowed to be called from the framework itself!
+         */
+        __attach(): void;
+        /**
+         * Is called by the system after the control instance is no longer part of the current DOM.
+         * Is only allowed to be called from the framework itself!
+         */
+        __detach(): void;
+        /**
+         * Destroy the current control instance.
+         * Will be called automatically if system destroys control!
+         */
+        destroy(): void;
+        /**
+         * Handle submit on keydown
+         */
+        protected __onKeydown: (event: KeyboardEvent) => void;
+        /**
+         * Handle value change on "input" to support virtual keyboards on mobile devices
+         * which caches the value while editing (iOS for example)
+         * input is fired when the keys has changed text
+         */
+        protected __onInput: (event: Event) => void;
+        /**
+         * Is raised if text is pasted into the underlying textarea element.
+         */
+        protected __onPaste: (event: Event) => void;
+        /**
+         * Is raised if text is cut from the underlying textarea element.
+         */
+        protected __onCut: (event: Event) => void;
+        /**
+         * Is raised if the underlying input element gets the focus.
+         */
+        protected __onFocusIn: (event: FocusEvent) => void;
+        /**
+         * Is raised if the underlying input element has lost its focus.
+         */
+        protected __onFocusOut: (event: FocusEvent) => void;
+        /**
+         * Performs the steps after a focusout event was received.
+         * @param event The focusout event.
+         */
+        protected __performFocusOut(event: Event): void;
+        /**
+         * Is raised after successful interaction with an TcHmiKeyboard control with indirect input.
+         * @param event
+         */
+        protected __onIndirectInputFinished: (event: Event) => void;
+        /**
+         * Is raised after canceled interaction with an TcHmiKeyboard control with indirect input.
+         * @param event
+         */
+        protected __onIndirectInputCanceled: (event: Event) => void;
+        /**
+         * Sets the value of the member variable "text" if the new value is not equal to the current value
+         * or the current control instance is locked and calls the associated process function (processText) after that.
+         * @param valueNew The new value for text.
+         */
+        setText(valueNew: string | null): void;
+        /**
+         * Sets the value of the member variable "text" regardless of lock.
+         * @param valueNew The new value for text
+         */
+        protected __setText(valueNew: string | null | undefined, process?: boolean): void;
+        /**
+         * Returns the current value of the member variable text.
+         */
+        getText(): string | undefined;
+        /**
+         * Processes the current value of text and forwards it to the value attribute of the underlying input variable.
+         * The current value of text is only forwarded if it is no binding expression.
+         */
+        protected __processText(): void;
+        /**
+         * Sets the value of restoreUserInputOnLoad
+         * @param valueNew The new value for restoreUserInputOnLoad
+         */
+        protected setRestoreUserInputOnLoad(valueNew: boolean | null): void;
+        /**
+         * Gets the value of restoreUserInputOnLoad
+         * @returns The current value of restoreUserInputOnLoad
+         */
+        protected getRestoreUserInputOnLoad(): boolean | undefined;
+        /**
+         * Processes restoreUserInputOnLoad
+         */
+        protected __processRestoreUserInputOnLoad(): void;
+        /**
+         * Reset all user input data and optionally restore the original values into the control.
+         * @param restoreOriginalValue If true, the original values will be restored in the control. Otherwise the control will just forget which values were entered by the user
+         */
+        protected resetUserInput(restoreOriginalValue: boolean): void;
+        /**
+         * Sets the value of dataPrecedence
+         * @param valueNew The new value for dataPrecedence
+         */
+        protected setDataPrecedence(valueNew: TcHmi.DataPrecedence | null): void;
+        /**
+         * Gets the value of dataPrecedence
+         * @returns The current value of dataPrecedence
+         */
+        protected getDataPrecedence(): DataPrecedence | undefined;
+        /**
+         * Returns whether the incoming data has precedence over userInput. Also updates userInput if necessary.
+         * @param incoming The incoming data.
+         */
+        protected __evaluateDataPrecedence(incoming: string | null): boolean;
+        /**
+         * Sets the value of the member variable SystemKeyboardInputMode.
+         * @param valueNew The new value for SystemKeyboardInputMode.
+         */
+        setSystemKeyboardInputMode(valueNew: TcHmi.Keyboard.KeyboardInputMode | null): void;
+        /**
+         * Returns the current value of the member variable text.
+         * @returns the current value of the member variable text.
+         */
+        getSystemKeyboardInputMode(): string | undefined;
+        protected __processSystemKeyboardInputMode(): void;
+        /**
+         * Sets the value of the member variable IgnoreEscapeSequences.
+         * @param valueNew The new value for IgnoreEscapeSequences
+         */
+        setIgnoreEscapeSequences(valueNew: boolean | null | undefined): void;
+        /**
+         * Returns the current value of IgnoreEscapeSequences.
+         * @returns The current value of IgnoreEscapeSequences.
+         */
+        getIgnoreEscapeSequences(): boolean | undefined;
+        /**
+         * Sets the text horizontal alignment and calls the associated process function (processTextHorizontalAlignment).
+         * @param valueNew The new value for textHorizontalAlignment.
+         */
+        setTextHorizontalAlignment(valueNew: HorizontalAlignment | null): void;
+        /**
+         * Returns the current value of textHorizontalAlignment.
+         * @returns The current value of textHorizontalAlignment.
+         */
+        getTextHorizontalAlignment(): "Left" | "Center" | "Right" | null | undefined;
+        /**
+         * Processes the current textHorizontalAlignment attribute value.
+         */
+        protected __processTextHorizontalAlignment(): void;
+        /**
+         * Sets the contentPadding value and calls the associated process function (processContentPadding) after it.
+         * @param valueNew The new value for the contentPadding attribute as object.
+         */
+        setContentPadding(valueNew: FourSidedCss | null): void;
+        /**
+         * The watch callback for the contentPadding object resolver.
+         */
+        protected __onResolverForContentPaddingWatchCallback: (data: Symbol.ObjectResolver.IWatchResultObject<FourSidedCss>) => void;
+        /**
+         * Returns the current contentPadding value.
+         * @returns The current value of the contentPadding member variable as json in string format.
+         */
+        getContentPadding(): FourSidedCss | null | undefined;
+        /**
+         * Processes the current contentPadding attribute.
+         */
+        protected __processContentPadding(): void;
+        /**
+         * Sets the font size and calls the associated process function (processTextFontSize).
+         * @param valueNew The new value for textFontSize.
+         */
+        setTextFontSize(valueNew: number | null): void;
+        /**
+         * Returns the current value of textFontSize.
+         * @returns The current value of textFontSize.
+         */
+        getTextFontSize(): number | undefined;
+        /**
+         * Processes the current textFontSize attribute value.
+         */
+        protected __processTextFontSize(): void;
+        /**
+         * Sets the font size and calls the associated process function (processTextFontSizeUnit).
+         * @param valueNew The new value for textFontSize.
+         */
+        setTextFontSizeUnit(valueNew: FontSizeUnit | null): void;
+        /**
+         * Returns the current value of textFontSizeUnit.
+         */
+        getTextFontSizeUnit(): "px" | "%" | "em" | "rem" | undefined;
+        /**
+         * Processes the current textFontSizeUnit attribute value.
+         */
+        protected __processTextFontSizeUnit(): void;
+        /**
+         * Sets the font family and calls the associated process function (processTextFontFamily).
+         * @param valueNew The new value for textFontFamily.
+         */
+        setTextFontFamily(valueNew: FontFamily | null): void;
+        /**
+         * Returns the current value of textFontFamily.
+         */
+        getTextFontFamily(): string | null | undefined;
+        /**
+         * Processes the current textFontFamily attribute value.
+         */
+        protected __processTextFontFamily(): void;
+        /**
+         * Sets the font style and calls the associated process function (processTextFontStyle).
+         * @param valueNew The new value for textFontStyle.
+         */
+        setTextFontStyle(valueNew: FontStyle | null): void;
+        /**
+         * Returns the current value of textFontStyle.
+         */
+        getTextFontStyle(): "Normal" | "Italic" | "Oblique" | "Auto" | undefined;
+        /**
+         * Processes the current textFontStyle attribute value.
+         */
+        protected __processTextFontStyle(): void;
+        /**
+         * Sets the font weight and calls the associated process function (processTextFontWeight).
+         * @param valueNew The new value for textFontWeight.
+         */
+        setTextFontWeight(valueNew: FontWeight | null): void;
+        /**
+         * Returns the current value of textFontWeight.
+         */
+        getTextFontWeight(): "Normal" | "Auto" | "Bold" | undefined;
+        /**
+         * Processes the current textFontWeight attribute value.
+         */
+        protected __processTextFontWeight(): void;
+        /**
+         * Sets the placeholder value and calls the associated process function (processPlaceholder).
+         * @param valueNew The new value for placeholder.
+         */
+        setPlaceholder(valueNew: string | null): void;
+        /**
+         * Returns the current value of placeholder.
+         */
+        getPlaceholder(): string | null | undefined;
+        /**
+         * Processes the current placeholder attribute value.
+         */
+        protected __processPlaceholder(): void;
+        /**
+         * Sets the text color and calls the associated process function (processTextColor).
+         * @param valueNew The new value for textColor.
+         */
+        setTextColor(valueNew: SolidColor | null): void;
+        /**
+         * The watch callback for the textColor object resolver.
+         */
+        protected __onResolverForTextColorWatchCallback: (data: Symbol.ObjectResolver.IWatchResultObject<SolidColor>) => void;
+        /**
+         * Returns the current value of textColor.
+         */
+        getTextColor(): SolidColor | null | undefined;
+        /**
+         * Processes the current textColor attribute value.
+         */
+        protected __processTextColor(): void;
+        /**
+         * Sets the auto focus out attribute and calls the associated process function (processAutoFocusOut).
+         * @param valueNew The new value for autoFocusOut.
+         */
+        setAutoFocusOut(valueNew: boolean | null): void;
+        /**
+         * Returns the current value of autoFocusOut.
+         */
+        getAutoFocusOut(): boolean | undefined;
+        /**
+         * Processes the current autoFocusOut attribute value.
+         */
+        protected __processAutoFocusOut(): void;
+        /** Lock handling */
+        /**
+         * Lock the control. Calls to setText will be ignored until control is unlocked.
+         */
+        __lock(): void;
+        /**
+         * Unlocks the control.
+         */
+        __unlock(): void;
+        /**
+         * Checks if the Control is deactivated and adjusts the visualization
+         */
+        protected __processControlActivation(): void;
+        /**
+         * Processes the current isEnabled attribute value.
+         */
+        __processIsEnabled(): void;
+        /**
+         * Processes the current AccessConfig attribute value.
+         */
+        __processAccessConfig(): void;
+        /**
+         * Sets the auto select text attribute and calls the associated process function (processAutoSelectText).
+         * @param valueNew The new value for autoSelectText.
+         */
+        setAutoSelectText(valueNew: boolean | null): void;
+        /**
+         * Returns the current value of autoSelectText.
+         */
+        getAutoSelectText(): boolean | undefined;
+    }
+    module TcHmiInput {
+        interface UserInput {
+            userData: string;
+            originalData: string | null;
+        }
+    }
+}
+//# sourceMappingURL=TcHmiInput.d.ts.map

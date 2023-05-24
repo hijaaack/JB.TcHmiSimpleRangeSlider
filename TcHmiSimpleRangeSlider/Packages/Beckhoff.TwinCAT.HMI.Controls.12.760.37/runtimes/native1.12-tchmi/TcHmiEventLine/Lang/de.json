@@ -1,0 +1,27 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "de",
+    "localizedText": {
+        "NoEventsReceived": "Es wurden keine Ereignisse empfangen.",
+        "Browser_Console_Could_Have_More_Information": "Es trat ein Fehler auf während das letzte Ereignis empfangen wurde. Die Browser-Konsole könnte weitere Hinweise enthalten.",
+        "NoElementsDefined": "Bestandteile der Meldung sind undefiniert. Bitte definieren Sie das Attribut 'MessageFormat'.",
+        "Type_Message": "Meldung",
+        "Type_Alarm": "Alarm",
+        "Type_Payload": "Nutzlast",
+        "Severity_Verbose": "Ausführlich",
+        "Severity_Info": "Information",
+        "Severity_Warning": "Warnung",
+        "Severity_Error": "Fehler",
+        "Severity_Critical": "Kritisch",
+        "AlarmState_Raised": "Ausgelöst",
+        "AlarmState_Confirmed": "Quittiert",
+        "AlarmState_Cleared": "Beseitigt",
+        "AlarmState_ClearedAndConfirmed": "Beseitigt und quittiert",
+        "AlarmState_Invalid": "Ungültig",
+        "ConfirmationState_NotSupported": "Nicht unterstützt",
+        "ConfirmationState_NotRequired": "Nicht erforderlich",
+        "ConfirmationState_WaitForConfirmation": "Auf Quittierung wartend",
+        "ConfirmationState_Confirmed": "Quittiert",
+        "ConfirmationState_Reset": "Zurückgesetzt"
+    }
+}

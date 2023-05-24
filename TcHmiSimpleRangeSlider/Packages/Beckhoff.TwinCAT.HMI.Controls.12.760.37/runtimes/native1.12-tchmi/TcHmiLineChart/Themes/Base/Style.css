@@ -1,0 +1,38 @@
+/** Styles for the theme: Base */
+
+/* Style for the main element */
+.TcHmi_Controls_Beckhoff_TcHmiLineChart,
+.tchmi-line-chart {
+    --tchmi-background: rgba(255, 255, 255, 0.5);
+    --tchmi-tooltip-background: #f5f6f7;
+    --tchmi-tooltip-color: #4794da;
+    background: var(--tchmi-background);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiLineChart-template,
+.tchmi-line-chart-template {
+    /*background: #f5f6f7;*/
+    background: transparent;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiLineChart-template-chart,
+.tchmi-line-chart-template-chart {
+    background: #f5f6f7;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiLineChart-template-legend {
+    background: #f5f6f7;
+    color: #4794da;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiLineChart-template-tooltip .TcHmi_Controls_Beckhoff_TcHmiLineChart-template-tooltip-text,
+.tchmi-line-chart-template-tooltip .tchmi-line-chart-template-tooltip-text {
+    background: var(--tchmi-tooltip-background);
+    color: var(--tchmi-tooltip-color);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.6);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiLineChart-template-tooltip-arrow,
+.tchmi-line-chart-template-tooltip-arrow {
+    background: var(--tchmi-tooltip-background);
+}

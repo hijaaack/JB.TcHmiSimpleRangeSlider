@@ -1,0 +1,1 @@
+var TcHmi;!function(TcHmi){!function(Controls){!function(Beckhoff){class TcHmiPolyline extends TcHmi.Controls.Beckhoff.TcHmiPolygon{}Beckhoff.TcHmiPolyline=TcHmiPolyline}(Controls.Beckhoff||(Controls.Beckhoff={}))}(TcHmi.Controls||(TcHmi.Controls={}))}(TcHmi||(TcHmi={})),TcHmi.Controls.registerEx("TcHmiPolyline","TcHmi.Controls.Beckhoff",TcHmi.Controls.Beckhoff.TcHmiPolyline);

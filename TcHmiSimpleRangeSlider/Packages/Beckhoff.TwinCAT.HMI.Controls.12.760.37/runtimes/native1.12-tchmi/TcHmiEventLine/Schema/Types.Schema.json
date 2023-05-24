@@ -1,0 +1,105 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "TcHmi.Controls.Beckhoff.TcHmiEventLine": {
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiEventLine",
+            "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+        },
+        "TcHmiEventLine": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiEventLine"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiEventLine.MessageFormat": {
+            "title": "MessageFormat",
+            "type": "array",
+            "engineeringColumns": ["title"],
+            "items": {
+                "anyOf": [
+                    {
+                        "title": "Event Property",
+                        "type": "object",
+                        "propertiesMeta": [
+                            {
+                                "name": "name",
+                                "displayName": "Name",
+                                "category": "General",
+                                "displayPriority": 10,
+                                "description": "A Part of the displayed message.",
+                                "defaultValue": null,
+                                "defaultValueInternal": null
+                            }
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "enum": [
+                                    "type",
+                                    "severity",
+                                    "alarmState",
+                                    "confirmationState",
+                                    "domain",
+                                    "sourceDomain",
+                                    "name",
+                                    "text",
+                                    "timeReceived",
+                                    "timeRaised",
+                                    "timeConfirmed",
+                                    "timeCleared"
+                                ]
+                            }
+                        },
+                        "required": ["name"]
+                    },
+                    {
+                        "title": "Event Parameter",
+                        "type": "object",
+                        "propertiesMeta": [
+                            {
+                                "name": "name",
+                                "displayName": "Name",
+                                "category": "General",
+                                "displayPriority": 10,
+                                "description": "The Path to a property of the received event. Subproperties can be accessed with the '::' seperator.",
+                                "defaultValue": "params::",
+                                "defaultValueInternal": null
+                            }
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "pattern": "^params::"
+                            }
+                        },
+                        "required": ["name"]
+                    },
+                    {
+                        "title": "Text",
+                        "type": "object",
+                        "propertiesMeta": [
+                            {
+                                "name": "text",
+                                "displayName": "Text",
+                                "category": "General",
+                                "displayPriority": 10,
+                                "description": "A custom text displayed in the event message.",
+                                "defaultValue": null,
+                                "defaultValueInternal": null
+                            }
+                        ],
+                        "properties": {
+                            "text": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["text"]
+                    }
+                ]
+            }
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiEventLine.TextOverflow": {
+            "type": "string",
+            "enum": ["Ellipsis", "MarqueeLeftToRight", "MarqueeRightToLeft"]
+        }
+    }
+}

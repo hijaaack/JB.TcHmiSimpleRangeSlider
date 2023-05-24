@@ -1,0 +1,27 @@
+{
+    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
+    "locale": "en",
+    "localizedText": {
+        "NoEventsReceived": "No events received.",
+        "Browser_Console_Could_Have_More_Information": "An error appeared while receiving the last event. The browser console could have some more information.",
+        "NoElementsDefined": "There are no message parts defined to form the message to be displayed. Please define the 'MessageFormat' attribute.",
+        "Type_Message": "Message",
+        "Type_Alarm": "Alarm",
+        "Type_Payload": "Payload",
+        "Severity_Verbose": "Verbose",
+        "Severity_Info": "Information",
+        "Severity_Warning": "Warning",
+        "Severity_Error": "Error",
+        "Severity_Critical": "Critical",
+        "AlarmState_Raised": "Raised",
+        "AlarmState_Confirmed": "Confirmed",
+        "AlarmState_Cleared": "Cleared",
+        "AlarmState_ClearedAndConfirmed": "Cleared and confirmed",
+        "AlarmState_Invalid": "Invalid",
+        "ConfirmationState_NotSupported": "Not supported",
+        "ConfirmationState_NotRequired": "Not required",
+        "ConfirmationState_WaitForConfirmation": "Wait for confirmation",
+        "ConfirmationState_Confirmed": "Confirmed",
+        "ConfirmationState_Reset": "Reset"
+    }
+}

@@ -1,0 +1,1 @@
+var TcHmi;!function(TcHmi){!function(Functions){!function(Beckhoff){Beckhoff.GetLocale=function(){return TcHmi.Locale.get()}}(Functions.Beckhoff||(Functions.Beckhoff={}))}(TcHmi.Functions||(TcHmi.Functions={}))}(TcHmi||(TcHmi={})),TcHmi.Functions.registerFunctionEx("GetLocale","TcHmi.Functions.Beckhoff",TcHmi.Functions.Beckhoff.GetLocale);

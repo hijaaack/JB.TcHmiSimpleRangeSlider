@@ -1,0 +1,236 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "TcHmi.Controls.Beckhoff.TcHmiTabNavigation": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiTabNavigation",
+            "frameworkControlNamespace": "TcHmi.Controls.Beckhoff"
+        },
+        "TcHmiTabNavigation": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTabNavigation"
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiTabNavigation.TabAlignment": {
+            "type": "string",
+            "enum": ["Top", "Right", "Bottom", "Left"]
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiTabNavigation.TabList": {
+            "type": "array",
+            "title": "Tabs",
+            "description": "A list of tabs",
+            "items": {
+                "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTabNavigation.Tab"
+            }
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiTabNavigation.TargetFile": {
+            "type": "object",
+            "description": "An object ({ path: string; attributes?: Dictionary<any>; }) with a file path and an attributes dictionary for the target file host control (when path points to a *.usercontrol file).",
+            "properties": {
+                "path": {
+                    "anyOf": [
+                        {
+                            "$ref": "tchmi:framework#/definitions/UserControlPath"
+                        },
+                        {
+                            "$ref": "tchmi:framework#/definitions/ContentPath"
+                        }
+                    ]
+                },
+                "attributes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": ["object", "array", "string", "boolean", "integer", "number"]
+                    }
+                }
+            },
+            "required": ["path"]
+        },
+        "TcHmi.Controls.Beckhoff.TcHmiTabNavigation.Tab": {
+            "type": "object",
+            "title": "Tab",
+            "description": "A single tab",
+            "engineeringColumns": ["name"],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "targetFile": {
+                    "$ref": "tchmi:framework#/definitions/TcHmi.Controls.Beckhoff.TcHmiTabNavigation.TargetFile"
+                },
+                "targetFileHostPreload": {
+                    "type": "boolean"
+                },
+                "targetFileHostPreAttach": {
+                    "type": "boolean"
+                },
+                "targetFileHostKeepAlive": {
+                    "type": "boolean"
+                },
+                "horizontalAlignment": {
+                    "$ref": "tchmi:framework#/definitions/HorizontalAlignment"
+                },
+                "verticalAlignment": {
+                    "$ref": "tchmi:framework#/definitions/VerticalAlignment"
+                },
+                "icon": {
+                    "type": "object",
+                    "properties": {
+                        "iconPath": {
+                            "$ref": "tchmi:framework#/definitions/Path"
+                        },
+                        "iconWidth": {
+                            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+                        },
+                        "iconWidthUnit": {
+                            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+                        },
+                        "iconHeight": {
+                            "$ref": "tchmi:framework#/definitions/MeasurementValue"
+                        },
+                        "iconHeightUnit": {
+                            "$ref": "tchmi:framework#/definitions/MeasurementUnit"
+                        }
+                    },
+                    "propertiesMeta": [
+                        {
+                            "name": "iconPath",
+                            "displayName": "Icon Path",
+                            "category": "General",
+                            "displayPriority": 10,
+                            "description": "The icon that will be displayed in the tab bar.",
+                            "defaultValue": null,
+                            "defaultValueInternal": null
+                        },
+                        {
+                            "name": "iconWidth",
+                            "displayName": "Icon Width",
+                            "category": "General",
+                            "displayPriority": 11,
+                            "description": "",
+                            "defaultValue": null,
+                            "defaultValueInternal": 32
+                        },
+                        {
+                            "name": "iconWidthUnit",
+                            "displayName": "Icon Width Unit",
+                            "category": "General",
+                            "displayPriority": 11,
+                            "description": "",
+                            "defaultValue": null,
+                            "defaultValueInternal": "px",
+                            "refTo": "iconWidth"
+                        },
+                        {
+                            "name": "iconHeight",
+                            "displayName": "Icon Height",
+                            "category": "General",
+                            "displayPriority": 12,
+                            "description": "",
+                            "defaultValue": null,
+                            "defaultValueInternal": 32
+                        },
+                        {
+                            "name": "iconHeightUnit",
+                            "displayName": "Icon Height Unit",
+                            "category": "General",
+                            "displayPriority": 12,
+                            "description": "",
+                            "defaultValue": null,
+                            "defaultValueInternal": "px",
+                            "refTo": "iconHeight"
+                        }
+                    ],
+                    "required": ["iconPath", "iconWidth", "iconWidthUnit", "iconHeight", "iconHeightUnit"]
+                }
+            },
+            "propertiesMeta": [
+                {
+                    "name": "name",
+                    "displayName": "Name",
+                    "category": "General",
+                    "displayPriority": 10,
+                    "description": "Name of the Tab.",
+                    "defaultValue": "newTab",
+                    "defaultValueInternal": null
+                },
+                {
+                    "name": "displayName",
+                    "displayName": "Display Name",
+                    "category": "General",
+                    "displayPriority": 10,
+                    "description": "Name of the Tab that will be displayed in the tab bar.",
+                    "defaultValue": "New Tab",
+                    "defaultValueInternal": null
+                },
+                {
+                    "name": "targetFile",
+                    "displayName": "Target File",
+                    "category": "General",
+                    "displayPriority": 11,
+                    "description": "",
+                    "defaultValue": null,
+                    "defaultValueInternal": null
+                },
+                {
+                    "name": "targetFileHostPreload",
+                    "displayName": "Target File Host Preload",
+                    "category": "General",
+                    "displayPriority": 13,
+                    "description": "Defines whether the target file host is preloaded when the tab navigation control is initialized or loaded when the tab is selected.",
+                    "defaultValue": null,
+                    "defaultValueInternal": false
+                },
+                {
+                    "name": "targetFileHostPreAttach",
+                    "displayName": "Target File Host Pre Attach",
+                    "category": "General",
+                    "displayPriority": 14,
+                    "description": "Defines whether the target file host is pre attached to the DOM even if the tab is not yet selected. Does only have an effect if TargetFileHostPreload is true.",
+                    "defaultValue": null,
+                    "defaultValueInternal": false
+                },
+                {
+                    "name": "targetFileHostKeepAlive",
+                    "displayName": "Target File Host Keep Alive",
+                    "category": "General",
+                    "displayPriority": 15,
+                    "description": "Defines whether the target file host is kept alive when the tab is unselected. Has no effect when TargetFileHostPreload is set to true.",
+                    "defaultValue": null,
+                    "defaultValueInternal": false
+                },
+                {
+                    "name": "horizontalAlignment",
+                    "displayName": "Horizontal alignment",
+                    "category": "General",
+                    "displayPriority": 20,
+                    "description": "Horizontal alignment of the text in the tab bar.",
+                    "defaultValue": "Left",
+                    "defaultValueInternal": "Left"
+                },
+                {
+                    "name": "verticalAlignment",
+                    "displayName": "Vertical alignment",
+                    "category": "General",
+                    "displayPriority": 21,
+                    "description": "Vertical alignment of the text in the tab bar.",
+                    "defaultValue": "Center",
+                    "defaultValueInternal": "Center"
+                },
+                {
+                    "name": "icon",
+                    "displayName": "Icon",
+                    "category": "General",
+                    "displayPriority": 30,
+                    "description": "The Icon displayed in the tab bar.",
+                    "defaultValue": null,
+                    "defaultValueInternal": null
+                }
+            ],
+            "required": ["name"]
+        }
+    }
+}

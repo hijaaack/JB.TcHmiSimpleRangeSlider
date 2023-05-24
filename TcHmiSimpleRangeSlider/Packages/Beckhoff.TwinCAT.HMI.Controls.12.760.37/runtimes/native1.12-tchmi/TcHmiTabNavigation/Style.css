@@ -1,0 +1,34 @@
+/** Styles for all themes */
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation {
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation-template {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation tchmi-content-tabs {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation tchmi-content-tabs tchmi-tab-contents {
+    height: calc(100% - 50px);
+}
+
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation > div > tchmi-content-tabs[tab-alignment='Left'] > tchmi-tab-contents,
+.TcHmi_Controls_Beckhoff_TcHmiTabNavigation > div > tchmi-content-tabs[tab-alignment='Right'] > tchmi-tab-contents {
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+.tchmi-tab-navigation-tab-link {
+    display: flex;
+}
+
+.tchmi-tab-navigation-tab-link .tab-icon {
+    margin-right: 8px;
+}

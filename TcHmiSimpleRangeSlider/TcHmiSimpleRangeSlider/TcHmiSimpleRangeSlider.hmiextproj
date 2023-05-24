@@ -1,10 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <PropertyGroup>
-    <TcHmiDirectory>$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
-    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">TwinCAT HMI</Platform>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
@@ -13,13 +11,17 @@
     <TcHmiCreatorVersion>[1.12,]</TcHmiCreatorVersion>
     <TargetFrameworkMoniker>native,Version=v1.12.0,Profile=tchmi</TargetFrameworkMoniker>
     <TargetFramework>native1.12-tchmi</TargetFramework>
-    <EnableTypeScript>true</EnableTypeScript>
     <ProjectTypeGuids>{3B740506-4966-4147-AB1F-357FE08946EA}</ProjectTypeGuids>
     <ProjectGuid>cf04ac39-a82e-425f-be24-2d784e38bdf8</ProjectGuid>
     <ProjectName>TcHmiSimpleRangeSlider</ProjectName>
     <Name>TcHmiSimpleRangeSlider</Name>
     <HmiInitial>1.12.750.1</HmiInitial>
-    <HmiRecent>1.12.750.1</HmiRecent>
+    <HmiRecent>1.12.760.37</HmiRecent>
+    <TcHmiDirectory>$(registry:HKEY_CURRENT_USER\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|TwinCAT HMI' ">
     <PlatformTarget>TwinCAT HMI</PlatformTarget>
@@ -30,8 +32,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
-    <TypeScriptShowVersionWarning>false</TypeScriptShowVersionWarning>
     <DefaultNamespace>TcHmiSimpleRangeSlider</DefaultNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|TwinCAT HMI' ">
@@ -41,8 +41,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
-    <TypeScriptShowVersionWarning>false</TypeScriptShowVersionWarning>
     <DefaultNamespace>TcHmiSimpleRangeSlider</DefaultNamespace>
   </PropertyGroup>
   <PropertyGroup Label="TwinCatHMI">
@@ -57,6 +55,9 @@
   <Import Project="$(TwinCATHmi_Targets)" />
   <ItemGroup>
     <Content Include="Images\logo.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="packages.config">
       <SubType>Content</SubType>
     </Content>
     <Content Include="TcHmiSimpleRangeSliderControl\Icons\16x16.png">
@@ -92,10 +93,6 @@
     <Content Include="TcHmiSimpleRangeSliderControl\Style.css" />
     <Content Include="TcHmiSimpleRangeSliderControl\Description.json" />
     <Content Include="TcHmiSimpleRangeSliderControl\Schema\Types.Schema.json" />
-    <Content Include="packages.config">
-      <SubType>Content</SubType>
-      <Visible>true</Visible>
-    </Content>
     <Content Include="packages.xsd">
       <SubType>Content</SubType>
       <Visible>false</Visible>
@@ -110,11 +107,7 @@
     <Folder Include="TcHmiSimpleRangeSliderControl\Themes\Base-Dark\" />
     <Folder Include="TcHmiSimpleRangeSliderControl\Themes\Base\" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
-  <Import Project="$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets" Condition="Exists('$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\build\Microsoft.TypeScript.targets')" />
-  <PropertyGroup>
-    <TSJavaScriptFile>$(TypeScriptSdkDir)\$(TypeScriptToolsVersion)\tsc.js</TSJavaScriptFile>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <PreBuildEventDependsOn>
     </PreBuildEventDependsOn>
@@ -128,28 +121,30 @@
     <Exec WorkingDirectory="$(OutDir)" Command="$(PostBuildEvent)" />
   </Target>
   <PropertyGroup>
-    <BuildDependsOn>
+    <BuiltProjectOutputGroupDependsOn>
       PreBuildEvent;
       CoreBuild;
       PostBuildEvent
-    </BuildDependsOn>
+    </BuiltProjectOutputGroupDependsOn>
+    <CleanDependsOn>
+		BaseClean
+	</CleanDependsOn>
   </PropertyGroup>
   <Target Name="CoreBuild">
     <Message Text="Microsoft.TypeScript.targets: $(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Importance="high" />
     <Message Text="TypeScriptSdkDir: $(TypeScriptSdkDir)" Importance="high" />
     <Message Text="TypeScriptToolsVersion: $(TypeScriptToolsVersion)" Importance="high" />
     <Message Text="LastKnownTypeScriptVersion: $(LastKnownTypeScriptVersion)" Importance="high" />
-    <CallTarget Targets="FindConfigFiles" />
-    <CallTarget Targets="CompileTypeScript" />
-    <CallTarget Targets="PreComputeCompileTypeScript" />
-    <CallTarget Targets="PreComputeCompileTypeScriptWithTSConfig" />
-    <CallTarget Targets="CompileTypeScriptWithTSConfig" />
-    <CallTarget Targets="GetTypeScriptOutputForPublishing" />
   </Target>
-  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
-  <Target Name="Clean">
-    <CallTarget Targets="TypeScriptDeleteCompilerOutput" />
-    <CallTarget Targets="TypeScriptBuildModeClean" />
-  </Target>
+  <Target Name="Build" DependsOnTargets="$(BuiltProjectOutputGroupDependsOn)" />
+  <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.4.9.5\build\Microsoft.TypeScript.MSBuild.targets')" />
 </Project>
