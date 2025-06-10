@@ -1,7 +1,0 @@
-/** Styles for theme: Base-Dark */
-
-/* Mark disabled controls without interupting control logic */
-.TcHmi_Controls_System_TcHmiControl-disabled::after,
-.tchmi-control-disabled::after {
-    background-color: rgba(86, 88, 103, 0.8);
-}

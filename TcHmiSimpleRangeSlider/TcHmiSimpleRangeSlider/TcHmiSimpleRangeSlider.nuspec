@@ -2,21 +2,21 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>JB.TcHmiSimpleRangeSlider</id>
-    <version>1.1.0</version>
+    <version>2.0.0</version>
     <description>Simple Range Slider</description>
     <authors>Jack Borelius</authors>
     <title>TcHmiSimpleRangeSlider</title>
     <owners>Jack Borelius</owners>
     <projectUrl>https://github.com/hijaaack/JB.TcHmiSimpleRangeSlider</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>Updated packages to 760.37 and disabled the new SystemKeyboard to be triggered when using this control.</releaseNotes>
-    <copyright>Copyright 2023</copyright>
+    <releaseNotes>Updated framework to 14.3.154 and TypeScript to 5.3.2 and added a new event that triggers for every tick.</releaseNotes>
+    <copyright>Copyright 2025</copyright>
     <tags>TwinCAT HMI</tags>
     <license type="expression">MIT</license>
     <icon>images/logo.png</icon>
     <dependencies>
       <group targetFramework="native1.12-tchmi">
-        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="12.760.37" />
+        <dependency id="Beckhoff.TwinCAT.HMI.Framework" version="14.3.154" />
       </group>
     </dependencies>
   </metadata>

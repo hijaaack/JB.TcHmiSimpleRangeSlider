@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Generated 9/22/2021 6:02:32 PM
  * Copyright (C) 2021
  */
@@ -78,6 +78,9 @@ module TcHmi {
                         $this.__sliderInputChange(e, $this);
                     });
 
+                    $(this.__elementRangeSliderInput).on('input', function (e) {
+                        $this.__sliderInputTickChange(e, $this);
+                    });
                 }
 
                 /**
@@ -93,6 +96,7 @@ module TcHmi {
                      */
 
                     this.__elementRangeSliderInput.off('change');
+                    $(this.__elementRangeSliderInput).off('input');
                 }
 
                 /**
@@ -270,6 +274,17 @@ module TcHmi {
 
                     //raise event
                     TcHmi.EventProvider.raise($this.getId() + '.onSliderInputChanged');
+                }
+
+                /**
+              * Processes the Slider Change Event.
+              * @function
+              */
+                protected __sliderInputTickChange(e: any, $this: this): void {
+                    this.setValue(e.target.value);
+
+                    //raise event
+                    TcHmi.EventProvider.raise($this.getId() + '.onSliderInputChange');
                 }
             }
         }

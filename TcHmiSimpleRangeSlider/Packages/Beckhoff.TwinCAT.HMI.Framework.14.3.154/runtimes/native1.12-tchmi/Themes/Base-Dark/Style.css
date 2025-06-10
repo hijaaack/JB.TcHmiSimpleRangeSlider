@@ -1,0 +1,48 @@
+/* Styles for theme: Base-Dark */
+:root,
+::after,
+::before {
+    --tchmi-disabled-BeckhoffControl-textcolor: #4c6374;
+    --tchmi-disallowed-BeckhoffControl-textcolor: var(--tchmi-disabled-BeckhoffControl-textcolor);
+    --tchmi-user-focus-color: #4089cb;
+    /* Global TcHmiControls colors */
+    --tchmi-highlight-color-1: #2775be;
+    --tchmi-highlight-color-2: #375d81;
+    --tchmi-background-color-1: #1b1b1f;
+    --tchmi-background-color-2: #434343;
+    --tchmi-background-color-3: #2b2b2c;
+    --tchmi-background-color-4: #2a3845;
+    --tchmi-foreground-color-1: #ffffff;
+    --tchmi-foreground-color-2: #4c6374;
+    --tchmi-foreground-color-3: #c0c0c5;
+    --tchmi-foreground-color-4: #a3b0bb;
+    /* Special colors */
+    --tchmi-error-color: #e30613;
+    --tchmi-warning-color: #ffa500;
+    --tchmi-ready-color: #009940;
+    --tchmi-confirmed-color: #cbd932;
+    --tchmi-user-input-color: #d98d00;
+    --tchmi-invalid-color: #8b0d0d;
+    --tchmi-disabled-color: rgba(86, 88, 103, 0.8);
+    --tchmi-read-only-color: #52535f;
+    --tchmi-popup-dim-color: rgba(75, 75, 75, 0.5);
+    /* Shadows */
+    --tchmi-shadow-color-1: rgba(0, 0, 0, 0.3);
+    --tchmi-shadow-color-2: rgba(0, 0, 0, 0.6);
+    --tchmi-card-shadow: var(--tchmi-shadow-color-1) 0 0 0 0;
+    --tchmi-dropdown-shadow: var(--tchmi-shadow-color-1) 0 1px 4px 1px;
+    --tchmi-dropdown-shadow-above: var(--tchmi-shadow-color-1) 0 -1px 4px 1px;
+    --tchmi-popup-shadow: var(--tchmi-shadow-color-2) 0px 0px 6px 1px;
+}
+input,
+button {
+    /* Do not change scheme for all native html inputs and buttons.
+     * Styled inputs (like in our controls) are not affected by this.
+     */
+    color-scheme: initial;
+}
+
+html {
+    /* Make our scrollbars dark. */
+    color-scheme: dark;
+}

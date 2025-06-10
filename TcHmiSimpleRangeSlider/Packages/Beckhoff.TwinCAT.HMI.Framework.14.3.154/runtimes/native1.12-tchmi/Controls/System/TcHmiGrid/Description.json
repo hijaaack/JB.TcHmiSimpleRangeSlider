@@ -1,0 +1,184 @@
+{
+    "$schema": "../../../Schema/ControlDescription.Schema.json",
+    "apiVersion": 1,
+    "name": "TcHmiGrid",
+    "namespace": "TcHmi.Controls.System",
+    "displayName": "Grid",
+    "version": {
+        "full": "14.3.154.0",
+        "major": 14,
+        "minor": 3,
+        "build": 154,
+        "revision": 0
+    },
+    "visible": true,
+    "themeable": "Standard",
+    "base": "TcHmi.Controls.System.TcHmiContainerControl",
+    "description": "A layout Grid for Controls which reacts fluid and responsive.",
+    "properties": {
+        "containerControl": true,
+        "geometry": {
+            "width": 300,
+            "height": 300
+        }
+    },
+    "icons": [
+        {
+            "name": "Icons/16x16.png",
+            "width": 16,
+            "height": 16
+        }
+    ],
+    "template": "Template.html",
+    "dependencyFiles": [
+        {
+            "name": "Style.css",
+            "type": "Stylesheet",
+            "description": ""
+        },
+        {
+            "name": "../dist/TcHmiGrid.esm.js",
+            "type": "EsModule",
+            "description": ""
+        }
+    ],
+    "themes": {},
+    "attributes": [
+        {
+            "name": "data-tchmi-width-mode",
+            "propertyName": "WidthMode",
+            "propertySetterName": "setWidthMode",
+            "propertyGetterName": "getWidthMode",
+            "displayName": "Width Mode",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 40,
+            "type": "tchmi:framework#/definitions/SizeModeWithContent",
+            "category": "Layout",
+            "description": "Defines if the width is taken from the width value, calculated from left and right (parent) or calculated from the child controls in columns.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "defaultValue": null,
+            "defaultValueInternal": "Value"
+        },
+        {
+            "name": "data-tchmi-height-mode",
+            "propertyName": "HeightMode",
+            "propertySetterName": "setHeightMode",
+            "propertyGetterName": "getHeightMode",
+            "displayName": "Height Mode",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 40,
+            "type": "tchmi:framework#/definitions/SizeModeWithContent",
+            "category": "Layout",
+            "description": "Defines if the height is taken from the height value, calculated from top and bottom (parent) or calculated from child controls in rows.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "defaultValue": null,
+            "defaultValueInternal": "Value"
+        },
+        {
+            "name": "data-tchmi-column-options",
+            "propertyName": "ColumnOptions",
+            "propertySetterName": "setColumnOptions",
+            "propertyGetterName": "getColumnOptions",
+            "displayName": "Column Options",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 10,
+            "type": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiGrid.ColumnOptions",
+            "category": "Common",
+            "description": "Options for the columns.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": [
+                {
+                    "width": 1,
+                    "widthUnit": "factor",
+                    "widthMode": "Value",
+                    "overflow": false
+                }
+            ]
+        },
+        {
+            "name": "data-tchmi-row-options",
+            "propertyName": "RowOptions",
+            "propertySetterName": "setRowOptions",
+            "propertyGetterName": "getRowOptions",
+            "displayName": "Row Options",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 10,
+            "type": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiGrid.RowOptions",
+            "category": "Common",
+            "description": "Options for the rows.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "defaultValue": null,
+            "defaultValueInternal": [
+                {
+                    "height": 1,
+                    "heightUnit": "factor",
+                    "heightMode": "Value",
+                    "overflow": false
+                }
+            ]
+        },
+        {
+            "name": "data-tchmi-cell-options",
+            "propertyName": "CellOptions",
+            "propertyGetterName": "getCellOptions",
+            "propertySetterName": "setCellOptions",
+            "displayName": "Cell Options",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 10,
+            "type": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiGrid.CellOptions",
+            "category": "Common",
+            "description": "Options for the cells.",
+            "readOnly": false,
+            "heritable": true,
+            "allowSymbolExpressionsInObject": true,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "defaultValue": null,
+            "defaultValueInternal": []
+        },
+        {
+            "name": "data-tchmi-cell-wrap",
+            "propertyName": "CellWrap",
+            "propertySetterName": "setCellWrap",
+            "propertyGetterName": "getCellWrap",
+            "displayName": "Cell Wrap",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 60,
+            "type": "tchmi:general#/definitions/Boolean",
+            "category": "Common",
+            "description": "Defines if the cells wraps if there is not enough space in the row.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "defaultValue": null,
+            "defaultValueInternal": true
+        }
+    ],
+    "dataTypes": [
+        {
+            "schema": "Schema/Types.Schema.json"
+        }
+    ]
+}

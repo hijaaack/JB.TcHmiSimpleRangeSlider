@@ -1,0 +1,243 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "definitions": {
+        "TcHmi.Controls.System.TcHmiPopup": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "type": "object",
+            "frameworkInstanceOf": "TcHmi.Controls.System.TcHmiControl",
+            "frameworkControlType": "TcHmiPopup",
+            "frameworkControlNamespace": "TcHmi.Controls.System"
+        },
+        "TcHmiPopup": {
+            "$ref": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiPopup"
+        },
+        "TcHmi.Controls.System.TcHmiPopup.TargetFile": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "anyOf": [
+                        {
+                            "$ref": "tchmi:framework#/definitions/UserControlPath"
+                        },
+                        {
+                            "$ref": "tchmi:framework#/definitions/ContentPath"
+                        }
+                    ]
+                },
+                "attributes": {
+                    "description": "A dictionary for the attributes with the html attribute names as keys.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": ["object", "array", "string", "boolean", "integer", "number"]
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["path"]
+        },
+        "TcHmi.Controls.System.TcHmiPopup.ButtonList": {
+            "title": "ButtonList",
+            "type": "array",
+            "items": {
+                "title": "Button",
+                "type": "object",
+                "propertiesMeta": [
+                    {
+                        "name": "name",
+                        "displayName": "Name",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The name of the button. Used to identify it in events and for styling.",
+                        "defaultValue": "",
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "value",
+                        "displayName": "Value",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The value of the button. Used as an event parameter.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "width",
+                        "displayName": "Width",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The width of the button in pixels.",
+                        "defaultValue": 60,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "height",
+                        "displayName": "Height",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The height of the button in pixels.",
+                        "defaultValue": 30,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "widthMode",
+                        "displayName": "Width Mode",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The width mode of the button. If set to 'Content', the button will adjust itself to the length its text, ignoring the width value.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "heightMode",
+                        "displayName": "Height Mode",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The height mode of the button. If set to 'Content', the button will adjust itself to the height its text, ignoring the height value.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "minWidth",
+                        "displayName": "Min Width",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The minimum width of the button in pixels.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "maxWidth",
+                        "displayName": "Max Width",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The maximum width of the button in pixels.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "minHeight",
+                        "displayName": "Min Height",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The minimum height of the button in pixels.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "maxHeight",
+                        "displayName": "Max Height",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The maximum height of the button in pixels.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "textPadding",
+                        "displayName": "Text Padding",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "The size of the padding around the text.",
+                        "defaultValue": null,
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "text",
+                        "displayName": "Text",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "A string to display on the button. Can be bound to a symbol.",
+                        "defaultValue": "",
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "tooltip",
+                        "displayName": "Tooltip",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "An optional tooltip.",
+                        "defaultValue": "",
+                        "defaultValueInternal": null
+                    },
+                    {
+                        "name": "keepPopupOpen",
+                        "displayName": "Keep Popup Open",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "Whether to close the popup when a button is pressed or keep it open. If not specified, this defaults to closing the popup.",
+                        "defaultValue": false,
+                        "defaultValueInternal": false
+                    },
+                    {
+                        "name": "actions",
+                        "displayName": "Actions",
+                        "category": "General",
+                        "displayPriority": 10,
+                        "description": "Actions to perform when the button is pressed.",
+                        "defaultValue": [],
+                        "defaultValueInternal": null
+                    }
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "value": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/Any"
+                            },
+                            {
+                                "default": null
+                            }
+                        ]
+                    },
+                    "width": {
+                        "type": "number"
+                    },
+                    "height": {
+                        "type": "number"
+                    },
+                    "widthMode": {
+                        "type": "string",
+                        "enum": ["Value", "Content"]
+                    },
+                    "heightMode": {
+                        "type": "string",
+                        "enum": ["Value", "Content"]
+                    },
+                    "minWidth": {
+                        "type": "number"
+                    },
+                    "maxWidth": {
+                        "type": "number"
+                    },
+                    "minHeight": {
+                        "type": "number"
+                    },
+                    "maxHeight": {
+                        "type": "number"
+                    },
+                    "textPadding": {
+                        "$ref": "tchmi:framework#/definitions/Padding"
+                    },
+                    "text": {
+                        "type": "string"
+                    },
+                    "tooltip": {
+                        "type": "string"
+                    },
+                    "keepPopupOpen": {
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "actions": {
+                        "$ref": "tchmi:framework#/definitions/Trigger/definitions/actionList"
+                    }
+                },
+                "required": ["name", "text", "width", "height"],
+                "additionalProperties": false
+            }
+        }
+    }
+}

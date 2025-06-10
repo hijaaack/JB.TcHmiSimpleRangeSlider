@@ -1,6 +1,6 @@
-declare module TcHmi {
-    module Controls {
-        module TcHmiSimpleRangeSlider {
+declare namespace TcHmi {
+    namespace Controls {
+        namespace TcHmiSimpleRangeSlider {
             class TcHmiSimpleRangeSliderControl extends TcHmi.Controls.System.TcHmiControl {
                 /**
                  * Constructor of the control
@@ -92,6 +92,11 @@ declare module TcHmi {
                  * @function
                  */
                 protected __sliderInputChange(e: any, $this: this): void;
+                /**
+              * Processes the Slider Change Event.
+              * @function
+              */
+                protected __sliderInputTickChange(e: any, $this: this): void;
             }
         }
     }

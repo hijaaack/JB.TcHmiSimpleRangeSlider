@@ -1,1 +1,0 @@
-var TcHmi;!function(TcHmi){!function(Functions){!function(Beckhoff){Beckhoff.EnumToString=function(value,mapping){return mapping?.[value]??""}}(Functions.Beckhoff||(Functions.Beckhoff={}))}(TcHmi.Functions||(TcHmi.Functions={}))}(TcHmi||(TcHmi={})),TcHmi.Functions.registerFunctionEx("EnumToString","TcHmi.Functions.Beckhoff",TcHmi.Functions.Beckhoff.EnumToString);

@@ -1,0 +1,99 @@
+{
+    "$schema": "../TcHmiFramework/Schema/FrameworkDescription.Schema.json",
+    "version": {
+        "full": "14.3.154.0",
+        "major": 14,
+        "minor": 3,
+        "build": 154,
+        "revision": 0
+    },
+    "events": [
+        {
+            "name": "onInitialized",
+            "displayName": "onInitialized",
+            "category": "Framework",
+            "description": "This event is fired after the framework is initialized. \nNote that not all bound symbols may have finished their initial value resolving at this time when a symbol is working asynchronous for example."
+        },
+        {
+            "name": "onLocaleChanged",
+            "displayName": "onLocaleChanged",
+            "category": "Framework",
+            "description": "This event is fired after a (perhaps new) locale has been loaded."
+        },
+        {
+            "name": "onThemeDataChanged",
+            "displayName": "onThemeDataChanged",
+            "category": "Framework",
+            "description": "This event is fired after the theme json and all css files have been loaded at a theme change. \nIt is additionally fired when a new font-face file has been fetched or devicePixelRatio has changed."
+        },
+        {
+            "name": "onUserChanged",
+            "displayName": "onUserChanged",
+            "category": "Framework",
+            "description": "This event is fired, if a new user is logged in."
+        },
+        {
+            "name": "onUserDataChanged",
+            "displayName": "onUserDataChanged",
+            "category": "Framework",
+            "description": "This event is fired, if a new user is logged in or the user configuration (group membership, timezone...) of the logged in user has changed."
+        },
+        {
+            "name": "onUserInGroupChanged",
+            "displayName": "onUserInGroupChanged",
+            "category": "Framework",
+            "description": "This event is fired after a user is known to be in different usergroups or no authentication is required."
+        },
+        {
+            "name": "onConfigChanged",
+            "displayName": "onConfigChanged",
+            "category": "Framework",
+            "description": "This event is fired when the tchmiconfig.json has changed. This file can only change while engineering."
+        },
+        {
+            "name": "onSystemKeyboardOpened",
+            "displayName": "onSystemKeyboardOpened",
+            "category": "Framework",
+            "description": "This event is fired after the system keyboard is opened or another text element is focused."
+        },
+        {
+            "name": "onSystemKeyboardClosed",
+            "displayName": "onSystemKeyboardClosed",
+            "category": "Framework",
+            "description": "This event is fired after the system keyboard is closed."
+        },
+        {
+            "name": "onWebsocketOpened",
+            "displayName": "onWebsocketOpened",
+            "category": "Framework",
+            "description": "This is event is fired when the websocket is ready. Please use onServerReady instead."
+        },
+        {
+            "name": "onWebsocketClosed",
+            "displayName": "onWebsocketClosed",
+            "category": "Framework",
+            "description": "This is event is fired when the websocket was closed. Please use onServerNotReady instead."
+        },
+        {
+            "name": "onServerReady",
+            "displayName": "onServerReady",
+            "category": "Framework",
+            "description": "This is event is fired when framework and server handshakes are done."
+        },
+        {
+            "name": "onServerNotReady",
+            "displayName": "onServerReady",
+            "category": "Framework",
+            "description": "This is event is fired when the framework to server connection is no longer ready. Will only be raised when the connection was ready before."
+        }
+    ],
+    "dataTypes": [
+        {
+            "schema": "Schema/Types.Schema.json"
+        }
+    ],
+    "languages": {
+        "en": "Lang/en.json",
+        "de": "Lang/de.json"
+    }
+}

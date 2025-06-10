@@ -28,6 +28,13 @@ var TcHmi;
                     /** Call base class constructor */
                     super(element, pcElement, attrs);
                 }
+                __elementTemplateRoot;
+                __elementRangeSliderDiv;
+                __elementRangeSliderInput;
+                __value;
+                __min;
+                __max;
+                __step;
                 /**
                   * If raised, the control object exists in control cache and constructor of each inheritation level was called.
                   * Call attribute processor functions here to initialize default values!
@@ -63,6 +70,9 @@ var TcHmi;
                     this.__elementRangeSliderInput.on('change', function (e) {
                         $this.__sliderInputChange(e, $this);
                     });
+                    $(this.__elementRangeSliderInput).on('input', function (e) {
+                        $this.__sliderInputTickChange(e, $this);
+                    });
                 }
                 /**
                 * Is called by tachcontrol() after the control instance is no longer part of the current DOM.
@@ -75,6 +85,7 @@ var TcHmi;
                      * No need to listen to events for example!
                      */
                     this.__elementRangeSliderInput.off('change');
+                    $(this.__elementRangeSliderInput).off('input');
                 }
                 /**
                 * Destroy the current control instance.
@@ -218,6 +229,15 @@ var TcHmi;
                     this.setValue(e.target.value);
                     //raise event
                     TcHmi.EventProvider.raise($this.getId() + '.onSliderInputChanged');
+                }
+                /**
+              * Processes the Slider Change Event.
+              * @function
+              */
+                __sliderInputTickChange(e, $this) {
+                    this.setValue(e.target.value);
+                    //raise event
+                    TcHmi.EventProvider.raise($this.getId() + '.onSliderInputChange');
                 }
             }
             TcHmiSimpleRangeSlider.TcHmiSimpleRangeSliderControl = TcHmiSimpleRangeSliderControl;

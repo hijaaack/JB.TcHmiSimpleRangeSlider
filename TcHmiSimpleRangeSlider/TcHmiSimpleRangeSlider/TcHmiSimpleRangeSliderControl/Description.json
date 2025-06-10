@@ -161,13 +161,22 @@
   "functions": [],
   "events": [
     {
-      "name": ".onSliderInputChanged",
-      "displayName": ".onSliderInputChanged",
-      "visible": true,
-      "displayPriority": 10,
-      "category": "Control",
-      "description": "The onSliderInputChanged event is fired when the slider value has changed.",
-      "heritable": true
+        "name": ".onSliderInputChanged",
+        "displayName": ".onSliderInputChanged",
+        "visible": true,
+        "displayPriority": 10,
+        "category": "Control",
+        "description": "The onSliderInputChanged event is fired when the user finishes interacting.",
+        "heritable": true
+    },
+    {
+        "name": ".onSliderInputChange",
+        "displayName": ".onSliderInputChange",
+        "visible": true,
+        "displayPriority": 11,
+        "category": "Control",
+        "description": "The onSliderInputChange event is fired for every value tick change.",
+        "heritable": true
     }
   ],
   "dataTypes": [

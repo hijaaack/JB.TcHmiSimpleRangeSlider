@@ -1,0 +1,37 @@
+/** Styles for theme: Base */
+:root,
+::after,
+::before {
+    --tchmi-disabled-BeckhoffControl-textcolor: #636374;
+    --tchmi-disallowed-BeckhoffControl-textcolor: var(--tchmi-disabled-BeckhoffControl-textcolor);
+    --tchmi-user-focus-color: #2774ba;
+    /* Global TcHmiControls colors */
+    --tchmi-highlight-color-1: #4794da;
+    --tchmi-highlight-color-2: #83a1bd;
+    --tchmi-background-color-1: #f6f7f8;
+    --tchmi-background-color-2: #d7d7d9;
+    --tchmi-background-color-3: #ededed;
+    --tchmi-background-color-4: #ffffff;
+    --tchmi-foreground-color-1: #4c6374;
+    --tchmi-foreground-color-2: #ffffff;
+    --tchmi-foreground-color-3: #c0c0c5;
+    --tchmi-foreground-color-4: #000000;
+    --tchmi-foreground-color-5: #a3b0bb; /* A 5th foreground color is not needed in the Base-Dark theme*/
+    /* Special colors */
+    --tchmi-error-color: #e30613;
+    --tchmi-warning-color: #ffa500;
+    --tchmi-ready-color: #009940;
+    --tchmi-confirmed-color: #cbd932;
+    --tchmi-user-input-color: #ffbe46;
+    --tchmi-invalid-color: #ffbcbc;
+    --tchmi-disabled-color: rgba(255, 255, 255, 0.5);
+    --tchmi-read-only-color: var(--tchmi-background-color-3);
+    --tchmi-popup-dim-color: rgba(0, 0, 0, 0.5);
+    /* Shadows */
+    --tchmi-shadow-color-1: rgba(0, 0, 0, 0.2);
+    --tchmi-shadow-color-2: rgba(0, 0, 0, 0.6);
+    --tchmi-card-shadow: var(--tchmi-shadow-color-1) 0 0 0 0;
+    --tchmi-dropdown-shadow: var(--tchmi-shadow-color-1) 0 1px 4px 1px;
+    --tchmi-dropdown-shadow-above: var(--tchmi-shadow-color-1) 0 -1px 4px 1px;
+    --tchmi-popup-shadow: var(--tchmi-shadow-color-2) 0px 0px 6px 1px;
+}

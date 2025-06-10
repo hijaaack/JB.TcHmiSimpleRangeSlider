@@ -1,0 +1,7 @@
+/** Styles for theme: Base-Dark */
+
+/* Mark disabled controls without interupting control logic */
+.TcHmi_Controls_System_TcHmiControl-disabled::after,
+.tchmi-control-disabled::after {
+    background-color: var(--tchmi-disabled-color);
+}

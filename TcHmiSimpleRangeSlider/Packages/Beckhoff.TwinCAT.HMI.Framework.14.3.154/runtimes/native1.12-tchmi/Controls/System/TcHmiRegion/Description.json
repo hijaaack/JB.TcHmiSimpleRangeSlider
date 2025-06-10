@@ -1,0 +1,194 @@
+{
+    "$schema": "../../../Schema/ControlDescription.Schema.json",
+    "apiVersion": 1,
+    "name": "TcHmiRegion",
+    "namespace": "TcHmi.Controls.System",
+    "displayName": "Region",
+    "version": {
+        "full": "14.3.154.0",
+        "major": 14,
+        "minor": 3,
+        "build": 154,
+        "revision": 0
+    },
+    "visible": true,
+    "themeable": "Advanced",
+    "base": "TcHmi.Controls.System.TcHmiControl",
+    "description": "A container for content controls.",
+    "properties": {
+        "containerControl": false,
+        "geometry": {
+            "width": 500,
+            "height": 500
+        }
+    },
+    "icons": [
+        {
+            "name": "Icons/16x16.png",
+            "width": 16,
+            "height": 16
+        }
+    ],
+    "template": "Template.html",
+    "dependencyFiles": [
+        {
+            "name": "Style.css",
+            "type": "Stylesheet",
+            "description": ""
+        },
+        {
+            "name": "../dist/TcHmiRegion.esm.js",
+            "type": "EsModule",
+            "description": ""
+        }
+    ],
+    "themes": {
+        "Base": {
+            "resources": [
+                {
+                    "name": "Themes/Base/Style.css",
+                    "type": "Stylesheet",
+                    "description": ""
+                }
+            ]
+        },
+        "Base-Dark": {
+            "resources": [
+                {
+                    "name": "Themes/Base-Dark/Style.css",
+                    "type": "Stylesheet",
+                    "description": ""
+                }
+            ]
+        }
+    },
+    "attributes": [
+        {
+            "name": "data-tchmi-target-content",
+            "propertyName": "TargetContent",
+            "propertySetterName": "setTargetContent",
+            "propertyGetterName": "getTargetContent",
+            "displayName": "Target Content",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 10,
+            "type": "tchmi:framework#/definitions/ContentPath",
+            "category": "Common",
+            "description": "Path to the content file to show.",
+            "defaultValue": null,
+            "defaultValueInternal": null,
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true
+        },
+        {
+            "name": "data-tchmi-current-content",
+            "propertyName": "CurrentContent",
+            "propertyGetterName": "getCurrentContent",
+            "displayName": "Current Content",
+            "visible": true,
+            "displayPriority": 10,
+            "type": "tchmi:framework#/definitions/TcHmi.Controls.System.TcHmiContent",
+            "category": "Common",
+            "description": "The currently loaded TcHmiContent control object.",
+            "readOnly": true,
+            "bindable": false,
+            "defaultBindingMode": "OneWay",
+            "heritable": true
+        },
+        {
+            "name": "data-tchmi-scale-mode",
+            "propertyName": "ScaleMode",
+            "propertySetterName": "setScaleMode",
+            "propertyGetterName": "getScaleMode",
+            "displayName": "Scale Mode",
+            "visible": true,
+            "themeable": "Standard",
+            "displayPriority": 60,
+            "type": "tchmi:framework#/definitions/ScaleMode",
+            "category": "Common",
+            "description": "Possible values are ScaleToFit, ScaleToFitWidth, ScaleToFitHeight, ScaleToFill, None.",
+            "defaultValue": null,
+            "defaultValueInternal": "None",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true
+        },
+        {
+            "name": "data-tchmi-scrolling",
+            "propertyName": "Scrolling",
+            "propertySetterName": "setScrolling",
+            "propertyGetterName": "getScrolling",
+            "displayName": "Scrolling",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 70,
+            "type": "tchmi:framework#/definitions/ScrollMode",
+            "category": "Common",
+            "description": "Possible values are No, Yes, Auto.",
+            "defaultValue": null,
+            "defaultValueInternal": "No",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true
+        },
+        {
+            "name": "data-tchmi-width-mode",
+            "propertyName": "WidthMode",
+            "propertySetterName": "setWidthMode",
+            "propertyGetterName": "getWidthMode",
+            "displayName": "Width Mode",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 40,
+            "type": "tchmi:framework#/definitions/SizeModeWithContent",
+            "category": "Layout",
+            "description": "Defines if the width is taken from the width value, calculated from left and right (parent) or calculated from content.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "defaultValue": null,
+            "defaultValueInternal": "Value"
+        },
+        {
+            "name": "data-tchmi-height-mode",
+            "propertyName": "HeightMode",
+            "propertySetterName": "setHeightMode",
+            "propertyGetterName": "getHeightMode",
+            "displayName": "Height Mode",
+            "visible": true,
+            "themeable": "Advanced",
+            "displayPriority": 40,
+            "type": "tchmi:framework#/definitions/SizeModeWithContent",
+            "category": "Layout",
+            "description": "Defines if the height is taken from the height value, calculated from top and bottom (parent) or calculated from content.",
+            "readOnly": false,
+            "bindable": true,
+            "defaultBindingMode": "OneWay",
+            "heritable": true,
+            "defaultValue": null,
+            "defaultValueInternal": "Value"
+        }
+    ],
+    "events": [
+        {
+            "name": ".onTargetContentReplaced",
+            "displayName": ".onTargetContentReplaced",
+            "category": "Control",
+            "description": "This event is fired when the targetContent has been replaced inside this region. \nThe content control is not attached at this time.",
+            "visible": true,
+            "displayPriority": 10,
+            "heritable": true
+        }
+    ],
+    "functions": [],
+    "dataTypes": [
+        {
+            "schema": "Schema/Types.Schema.json"
+        }
+    ]
+}

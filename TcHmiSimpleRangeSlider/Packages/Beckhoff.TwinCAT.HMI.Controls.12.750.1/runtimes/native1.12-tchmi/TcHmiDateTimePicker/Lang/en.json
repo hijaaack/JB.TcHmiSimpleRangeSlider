@@ -1,9 +1,0 @@
-{
-    "$schema": "../../../../TcHmiServer/TcHmiSrv/schema/Language.Schema.json",
-    "locale": "en",
-    "localizedText": {
-        "Label_Text_Time": "Time",
-        "Button_Text_Ok": "OK",
-        "Button_Text_Cancel": "Cancel"
-    }
-}

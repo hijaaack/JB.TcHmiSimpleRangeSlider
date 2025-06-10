@@ -1,0 +1,1442 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "URL to a schema file"
+        },
+        "projectVersion": {
+            "type": "string",
+            "description": "Project version as defined by the customer"
+        },
+        "splash": {
+            "type": "object",
+            "properties": {
+                "versionSource": {
+                    "type": "string",
+                    "enum": ["None", "Project", "Framework"],
+                    "default": "Framework"
+                }
+            },
+            "additionalProperties": false
+        },
+        "basePath": {
+            "type": "string",
+            "description": "Path to the Framework Directory."
+        },
+        "dependencyFiles": {
+            "type": "array",
+            "description": "Theme independent files.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Path to the file with the project directory as base path.",
+                        "minLength": 1
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["Stylesheet", "JavaScript", "EsModule"],
+                        "description": "Type of file. Stylesheet, JavaScript and EsModule are supported."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A long description of this file."
+                    }
+                },
+                "additionalProperties": false,
+                "required": ["name", "type"]
+            }
+        },
+        "activeTheme": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name of the Theme which is active while loading the Application."
+        },
+        "themes": {
+            "description": "List of Themes of this Application.",
+            "type": "object",
+            "additionalProperties": {
+                "description": "Definition of the Theme.",
+                "type": "object",
+                "properties": {
+                    "resources": {
+                        "description": "References to Resources of this Theme.",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Path to the file with the project directory as base path.",
+                                    "minLength": 1
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": ["Stylesheet", "ThemedValues"],
+                                    "description": "Type of the control asset."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "A long description of this file."
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "replacesThemeForControls": {
+                        "type": "array",
+                        "description": "Project only: Do not load theme files (.theme and .css) for this controls",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "replacesThemeForPackageComponents": {
+                        "type": "array",
+                        "description": "Project only: Do not load .css files for these package components (as 'packageId/componentName'). \nFor example 'Beckhoff.TwinCAT.HMI.Controls/ContentTabs' or for all global resources 'Beckhoff.TwinCAT.HMI.ResponsiveNavigation'",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "locale": {
+            "type": "string",
+            "description": "Deprecated and unused."
+        },
+        "scaleMode": {
+            "type": "string",
+            "enum": ["None", "ScaleToFill", "ScaleToFit", "ScaleToFitWidth", "ScaleToFitHeight"],
+            "description": "Scalemode of the full Application."
+        },
+        "startupView": {
+            "type": "string",
+            "description": "Name of the View which is active while loading the Application."
+        },
+        "loginPage": {
+            "type": "string",
+            "description": "Path to a custom login page."
+        },
+        "tcHmiServer": {
+            "description": "Configuration of the Server Communication.",
+            "type": "object",
+            "properties": {
+                "websocketIntervalTime": {
+                    "type": "integer",
+                    "description": "Interval used for server request or symbols if no override is specified."
+                },
+                "websocketTimeout": {
+                    "type": "integer",
+                    "description": "Timeout used for server requests or symbols if no override is specified."
+                },
+                "websocketSystemTimeout": {
+                    "type": "integer",
+                    "description": "Timeout used for internal server communication. Normally it is not necessary to change this setting."
+                },
+                "websocketSubscriptionMode": {
+                    "type": ["string", "null"],
+                    "enum": ["Change", "Poll", "ClientPoll", "ClientWriteConfirm", null],
+                    "description": "Subscription mode used for symbol related subscriptions if no override (for example symbol option) is specified."
+                }
+            },
+            "additionalProperties": false
+        },
+        "packages": {
+            "description": "List of all available packages.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Package Id."
+                    },
+                    "basePath": {
+                        "type": "string",
+                        "description": "Path to the package root directory."
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "userControls": {
+            "description": "List of all available Usercontrols.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Path to the Usercontrol main file."
+                    }
+                },
+                "required": ["url"],
+                "additionalProperties": false
+            }
+        },
+        "content": {
+            "description": "List of all available content files.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Path to the content file."
+                    },
+                    "preload": {
+                        "type": "boolean",
+                        "description": "Defines if the file should be loaded and compiled during initialization to accelerate later usage.",
+                        "default": false
+                    },
+                    "keepAlive": {
+                        "type": "boolean",
+                        "description": "Defines if the compile result should be cached after first usage to accelerate later usage.",
+                        "default": false
+                    },
+                    "loadSync": {
+                        "type": "boolean",
+                        "description": "Defines if the content should be loaded synchronous.",
+                        "default": false
+                    },
+                    "preloadBindings": {
+                        "type": "boolean",
+                        "description": "Defines if bindings on controls within this file should be preloaded before its content is displayed to have proper values when the content is displayed. Requires Preload to be activated.",
+                        "default": false
+                    }
+                },
+                "required": ["url", "preload"],
+                "additionalProperties": false
+            }
+        },
+        "views": {
+            "description": "List of all available view files.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Path to the view file."
+                    },
+                    "preload": {
+                        "type": "boolean",
+                        "description": "Defines if the file should be loaded and compiled during initialization to accelerate later usage.",
+                        "default": false
+                    },
+                    "keepAlive": {
+                        "type": "boolean",
+                        "description": "Defines if the compile result should be cached after first usage to accelerate later usage.",
+                        "default": false
+                    },
+                    "preloadBindings": {
+                        "type": "boolean",
+                        "description": "Defines if bindings on controls within this file should be preloaded before its content is displayed to have proper values when the content is displayed. Requires Preload to be activated.",
+                        "default": false
+                    }
+                },
+                "required": ["url", "preload"],
+                "additionalProperties": false
+            }
+        },
+        "userFunctions": {
+            "description": "List of all available user function files.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Path to the user function js file."
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "symbols": {
+            "type": "object",
+            "description": "Definition of all project based symbols.",
+            "properties": {
+                "internal": {
+                    "type": "object",
+                    "description": "Definition of all project based internal symbols (available via %i%symbolname%/i%). Key is the symbol name.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "description": "Definition of the internal symbol with this name.",
+                        "properties": {
+                            "value": {
+                                "description": "Value for this internal symbol."
+                            },
+                            "persist": {
+                                "type": "boolean",
+                                "description": "The change of value is saved in the client and available after reload. Defaults to false if not provided.",
+                                "default": false
+                            },
+                            "readonly": {
+                                "type": "boolean",
+                                "description": "The symbol can not be changed. Defaults to false if not provided.",
+                                "default": false
+                            },
+                            "type": {
+                                "type": "string",
+                                "minLength": 6,
+                                "pattern": "^tchmi:",
+                                "description": "Information about the expected type as a tchmi reference name."
+                            }
+                        },
+                        "required": ["type"],
+                        "additionalProperties": false
+                    }
+                },
+                "themedResources": {
+                    "type": "object",
+                    "description": "Definition of all project based themedResource symbols (available via %tr%symbolname%/tr%). Key is the symbol name.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "description": "Definition of the themedResource symbol with this name.",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "minLength": 6,
+                                "pattern": "^tchmi:",
+                                "description": "Information about the expected type as a tchmi reference name. \nThe type of the parameter gives the tchmi creator a hint to use a custom editor."
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "A description of the themed resource."
+                            },
+                            "values": {
+                                "type": "object",
+                                "description": "A map containing a value for each theme. Key is the themename.",
+                                "additionalProperties": {
+                                    "description": "Value for each resource name"
+                                }
+                            }
+                        },
+                        "required": ["type"],
+                        "additionalProperties": false
+                    }
+                },
+                "timer": {
+                    "type": "object",
+                    "description": "Definition of all project based timer symbols (available via %t%symbolname%/t%). Key is the symbol name.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "description": "Definition of the timer symbol with this name.",
+                        "properties": {
+                            "pattern": {
+                                "type": "array",
+                                "description": "Value pattern for this timer symbol.",
+                                "items": {
+                                    "oneOf": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "value": {
+                                                    "description": "Value for this pattern part. Only used when symbol is not defined."
+                                                },
+                                                "duration": {
+                                                    "type": "number",
+                                                    "description": "Duration in milliseconds for this timer symbol pattern part."
+                                                }
+                                            },
+                                            "required": ["value", "duration"],
+                                            "additionalProperties": false
+                                        },
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "symbol": {
+                                                    "type": "string",
+                                                    "pattern": "^%(s|i|l|pp|tp|f|ctrl|ctx|tr|t)%.+%\\/\\1%$",
+                                                    "description": "SymbolExpression which represents the value for this timer symbol pattern part. Overrides value when defined. "
+                                                },
+                                                "duration": {
+                                                    "type": "number",
+                                                    "description": "Duration in milliseconds for this timer symbol pattern part."
+                                                }
+                                            },
+                                            "required": ["symbol", "duration"],
+                                            "additionalProperties": false
+                                        }
+                                    ]
+                                }
+                            },
+                            "runSymbol": {
+                                "type": "string",
+                                "pattern": "^%(s|i|l|pp|tp|f|ctrl|ctx|tr|t)%.+%\\/\\1%$",
+                                "description": "SymbolExpression (Boolean) which controls the state of the timer."
+                            },
+                            "stopValue": {
+                                "description": "Value which is active when the timer is stopped."
+                            },
+                            "type": {
+                                "type": "string",
+                                "minLength": 6,
+                                "pattern": "^tchmi:",
+                                "description": "Information about the expected type as a tchmi reference name."
+                            }
+                        },
+                        "required": ["type", "pattern"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["internal"],
+            "additionalProperties": false
+        },
+        "trigger": {
+            "description": "Definition of global Triggers.",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Trigger"
+            }
+        },
+        "intervals": {
+            "type": "object",
+            "description": "Definition of all project based intervals. Key is the interval name.",
+            "additionalProperties": {
+                "type": "object",
+                "description": "Definition of the interval with this name.",
+                "properties": {
+                    "interval": {
+                        "type": "number",
+                        "description": "Interval time in milliseconds."
+                    },
+                    "actions": {
+                        "$ref": "#/definitions/Trigger/definitions/actionList"
+                    }
+                },
+                "required": ["interval", "actions"],
+                "additionalProperties": false
+            }
+        },
+        "actionTemplates": {
+            "description": "Definition of all available actionTemplates.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the Action Template.",
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "actions": {
+                        "type": "array"
+                    },
+                    "parameters": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "type": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "structDataType": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "languages": {
+            "description": "List of all available localization files for the project strings (LocalizedText symbols).",
+            "type": "object",
+            "additionalProperties": {
+                "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path or array of paths.",
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path."
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "description": "List of localization files. If some keys are referenced in multiple files, the last file will win."
+                        }
+                    }
+                ]
+            }
+        },
+        "languageFallback": {
+            "type": "string",
+            "description": "Definition of Language and Region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US')."
+        },
+        "languagesForFramework": {
+            "type": "object",
+            "description": "Project level overrides for framework core localization files.",
+            "additionalProperties": {
+                "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path or array of paths.",
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path."
+                    },
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "description": "List of localization files. If some keys are referenced in multiple files, the last file will win."
+                        }
+                    }
+                ]
+            }
+        },
+        "languagesForPackages": {
+            "type": "object",
+            "description": "Project level overrides for framework package localization files.",
+            "additionalProperties": {
+                "type": "object",
+                "languages": {
+                    "description": "List of all available localization files of the related package.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path or array of paths.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path."
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "description": "List of localization files. If some keys are referenced in multiple files, the last file will win."
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "languagesForControls": {
+            "type": "object",
+            "description": "Project level overrides for framework control localization files.",
+            "additionalProperties": {
+                "type": "object",
+                "languages": {
+                    "description": "List of all available localization files of the related control.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path or array of paths.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path."
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "description": "List of localization files. If some keys are referenced in multiple files, the last file will win."
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "languagesForFunctions": {
+            "type": "object",
+            "description": "Project level overrides for framework function localization files.",
+            "additionalProperties": {
+                "type": "object",
+                "languages": {
+                    "description": "List of all available localization files of the related function.",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path or array of paths.",
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "description": "Key is the language and region (optionally) as described in ISO 639/BCP 47 (Examples: 'en', 'en-US'). Value is the file path."
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "description": "List of localization files. If some keys are referenced in multiple files, the last file will win."
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "keyboardLayouts": {
+            "description": "List of available keyboard layouts in project.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Path to the keyboard layout."
+                    }
+                },
+                "required": ["url"],
+                "additionalProperties": false
+            }
+        },
+        "disableLoadingOptimization": {
+            "type": "boolean",
+            "description": "Disable various loading optimizations"
+        },
+        "tcSpeech": {
+            "type": "object",
+            "description": "Configuration for TcSpeech Integration.",
+            "properties": {
+                "domain": {
+                    "type": "string",
+                    "description": "Name of the TcSpeech extension on the server. Defaults to 'TcHmiSpeech'"
+                },
+                "enableSpeaker": {
+                    "type": "boolean",
+                    "description": "Our speaker should be used."
+                },
+                "enableMicrophone": {
+                    "type": "boolean",
+                    "description": "Our microphone should be used."
+                },
+                "defaultVolume": {
+                    "type": "number",
+                    "description": "Default audio volume",
+                    "default": 1,
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "confidenceThreshold": {
+                    "type": "number",
+                    "description": "Ignore detected speech commands with a lower relative measure of the certainty of correct recognition of a phrase. The value is from 0.0 to 1.0, for low to high confidence, respectively. ",
+                    "default": 0.2,
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            },
+            "additionalProperties": false
+        },
+        "creatorSettings": {
+            "description": "Definition of engineering settings.",
+            "type": "object",
+            "properties": {
+                "viewport": {
+                    "description": "Definition of the viewport emulation.",
+                    "type": "object",
+                    "properties": {
+                        "defaultWidth": {
+                            "type": "number",
+                            "description": "Width as a Pixel Number."
+                        },
+                        "defaultHeight": {
+                            "type": "number",
+                            "description": "Height as a Pixel Number."
+                        }
+                    },
+                    "required": ["defaultHeight", "defaultWidth"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["viewport"],
+            "additionalProperties": false
+        },
+        "binding": {
+            "description": "Binding settings",
+            "type": "object",
+            "properties": {
+                "symbolError": {
+                    "description": "Determines how a binding will handle symbol related read/watch errors.\nPossible values:\n- Ignore: Ignore the error.\n- Reset: Forward the default toggle switch (null) to force the control attribute to reset to default value.",
+                    "type": "string",
+                    "enum": ["Ignore", "Reset"],
+                    "default": "Ignore"
+                },
+                "symbolWriteError": {
+                    "description": "Determines how a binding will handle symbol related write errors.\nPossible values:\n- Ignore: Ignore the error.\n- ReadBack: Read back the current symbol value after write attempt failure and forward it to the control.",
+                    "type": "string",
+                    "enum": ["Ignore", "ReadBack"],
+                    "default": "ReadBack"
+                }
+            },
+            "additionalProperties": false
+        },
+        "systemKeyboard": {
+            "description": "Defines the system keyboard",
+            "type": "object",
+            "properties": {
+                "autoOpen": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Defines if the system keyboard should open on focus of a textarea or input element."
+                },
+                "providerName": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Name of the keyboard provider or empty string to disable system keyboard."
+                },
+                "projectKeyboardMapping": {
+                    "type": "object",
+                    "description": "Definition of the keyboard mappings. Key is the locale.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "description": "Mapping from input mode string to project based keyboard layout. Key is the input mode.",
+                        "properties": {
+                            "text": {
+                                "type": "string",
+                                "description": "Keyboard layout path for texts and unknown input elements. \nCould be the empty string. Will fall back to 'text' of fallback language."
+                            },
+                            "decimal": {
+                                "type": "string",
+                                "description": "Keyboard layout path for decimal input elements (potential fractional input). \nCould be the empty string. Will fall back to 'decimal' of fallback language, \n'text' keyboard file of this language or 'text' of fallback language."
+                            },
+                            "numeric": {
+                                "type": "string",
+                                "description": "Keyboard layout path for numeric input elements (non-fractional input). \nCould be empty. Will fall back to 'decimal' of this language, \n'numeric' / 'decimal' of fallback language, \n'text' keyboard file of this language or 'text' of fallback language."
+                            }
+                        },
+                        "required": ["decimal", "numeric", "text"],
+                        "additionalProperties": {
+                            "type": "string",
+                            "description": "Configured project based keyboard path for some text controls or input controls. \nCould be the empty string. Will fall back to the same input mode of fallback language, \n'text' keyboard file of this language or 'text' of fallback language."
+                        }
+                    }
+                },
+                "layout": {
+                    "type": "object",
+                    "description": "Layout of the system keyboard.",
+                    "properties": {
+                        "height": {
+                            "type": "number",
+                            "description": "Pixel height of the system keyboard. \nIf empty the defined height of the keyboard layout will be used."
+                        },
+                        "position": {
+                            "type": "string",
+                            "enum": ["popup", "footer"],
+                            "default": "popup",
+                            "description": "Position of the system keyboard. If not defined will use popup."
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "required": ["providerName"],
+            "additionalProperties": false,
+            "examples": [
+                {
+                    "providerName": ""
+                },
+                {
+                    "providerName": "Beckhoff.TcHmiKeyboard",
+                    "projectKeyboardMapping": {
+                        "de": {
+                            "text": "KeyboardLayouts/German - indirect basic.keyboard.json",
+                            "decimal": "KeyboardLayouts/Numpad (plusminus) - indirect.keyboard.json",
+                            "numeric": "KeyboardLayouts/Numpad (plusminus) - indirect.keyboard.json"
+                        },
+                        "en": {
+                            "text": "KeyboardLayouts/US - indirect compact.keyboard.json",
+                            "decimal": "KeyboardLayouts/Numpad (plusminus) - indirect.keyboard.json",
+                            "numeric": "KeyboardLayouts/Numpad (plusminus) - indirect.keyboard.json"
+                        }
+                    }
+                },
+                {
+                    "providerName": "Beckhoff.TcHmiKeyboard",
+                    "projectKeyboardMapping": {
+                        "de": {
+                            "text": "KeyboardLayouts/German - indirect basic.keyboard.json",
+                            "decimal": "",
+                            "numeric": ""
+                        },
+                        "en": {
+                            "text": "KeyboardLayouts/US - indirect compact.keyboard.json",
+                            "decimal": "",
+                            "numeric": ""
+                        }
+                    }
+                }
+            ]
+        },
+        "systemPopups": {
+            "description": "Defines the system popups",
+            "type": "object",
+            "properties": {
+                "providerName": {
+                    "type": "string",
+                    "description": "Name of the popup provider."
+                }
+            },
+            "required": ["providerName"],
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "basePath",
+        "scaleMode",
+        "startupView",
+        "tcHmiServer",
+        "userControls",
+        "content",
+        "views",
+        "userFunctions",
+        "symbols",
+        "trigger",
+        "actionTemplates",
+        "languages",
+        "creatorSettings",
+        "binding",
+        "systemPopups"
+    ],
+    "definitions": {
+        "Trigger": {
+            "$schema": "http://json-schema.org/draft-04/schema",
+            "definitions": {
+                "action": {
+                    "anyOf": [
+                        {
+                            "title": "Condition",
+                            "type": "object",
+                            "description": "IF .. THEN ..ELSE - style condition",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["Condition"]
+                                },
+                                "parts": {
+                                    "type": "array",
+                                    "items": {
+                                        "anyOf": [
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "if": {
+                                                        "$ref": "#/definitions/Trigger/definitions/expression"
+                                                    },
+                                                    "then": {
+                                                        "$ref": "#/definitions/Trigger/definitions/actionList"
+                                                    },
+                                                    "showThenActions": {
+                                                        "type": "boolean",
+                                                        "description": "Holds the current state of the Trigger GUI. Not used in runtime"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "elseif": {
+                                                        "$ref": "#/definitions/Trigger/definitions/expression"
+                                                    },
+                                                    "then": {
+                                                        "$ref": "#/definitions/Trigger/definitions/actionList"
+                                                    },
+                                                    "showThenActions": {
+                                                        "type": "boolean",
+                                                        "description": "Holds the current state of the Trigger GUI. Not used in runtime"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            {
+                                                "type": "object",
+                                                "properties": {
+                                                    "else": {
+                                                        "$ref": "#/definitions/Trigger/definitions/actionList"
+                                                    },
+                                                    "showThenActions": {
+                                                        "type": "boolean",
+                                                        "description": "Holds the current state of the Trigger GUI. Not used in runtime"
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            }
+                                        ]
+                                    }
+                                },
+                                "success": {
+                                    "description": "Success callback action list.",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/action"
+                                    }
+                                },
+                                "error": {
+                                    "description": "Error callback action list.",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/action"
+                                    }
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "SwitchCase",
+                            "type": "object",
+                            "description": "SWITCH .. CASE ..CASE - style condition",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["SwitchCase"]
+                                },
+                                "compare": {
+                                    "$ref": "#/definitions/Trigger/definitions/value"
+                                },
+                                "cases": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/vCase"
+                                    }
+                                },
+                                "caseDefault": {
+                                    "$ref": "#/definitions/Trigger/definitions/dCase"
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": ["objectType", "compare", "cases", "caseDefault"]
+                        },
+                        {
+                            "title": "WriteToSymbol",
+                            "type": "object",
+                            "description": "Write to Symbol",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["WriteToSymbol"]
+                                },
+                                "symbolExpression": {
+                                    "$ref": "#/definitions/Trigger/definitions/symbolExpression"
+                                },
+                                "value": {
+                                    "$ref": "#/definitions/Trigger/definitions/value"
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType", "symbolExpression", "value"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "Function",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["Function"]
+                                },
+                                "fn": {
+                                    "type": "string"
+                                },
+                                "fnParams": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/value"
+                                    }
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType", "fn", "fnParams"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "JavaScript",
+                            "type": "object",
+                            "description": "Executes a user-defined JavaScript",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["JavaScript"]
+                                },
+                                "sourceLines": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "waitMode": {
+                                    "type": "string",
+                                    "enum": ["Synchronous", "Asynchronous"],
+                                    "description": "Synchronous: Next step will called after last JavaScript line. Asynchronous: Next step will called after calling ctx.success() or ctx.error(TcHmi.Errors.ERROR)"
+                                },
+                                "success": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/action"
+                                    },
+                                    "description": "Steps which will be called after call of ctx.success() with Asynchronous or last line with Synchronous."
+                                },
+                                "error": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/action"
+                                    },
+                                    "description": "Steps which will be called after call of ctx.success() with Asynchronous or an exception with Synchronous."
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean",
+                                    "description": "The next step is called after the completion of this step."
+                                }
+                            },
+                            "required": ["objectType", "sourceLines"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "ActionTemplate",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["ActionTemplate"]
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "A long description of this control."
+                                },
+                                "templateName": {
+                                    "type": "string"
+                                },
+                                "fnParams": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/value"
+                                    }
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType", "templateName", "fnParams"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "ControlApiFunction",
+                            "type": "object",
+                            "description": "Defines an API of the control.",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["ControlApiFunction"]
+                                },
+                                "control": {
+                                    "type": "string"
+                                },
+                                "fn": {
+                                    "type": "string"
+                                },
+                                "fnParams": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/definitions/Trigger/definitions/value"
+                                    }
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType", "control", "fn"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "FunctionExpression",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["FunctionExpression"]
+                                },
+                                "functionExpression": {
+                                    "type": "string"
+                                },
+                                "success": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "error": {
+                                    "$ref": "#/definitions/Trigger/definitions/actionList"
+                                },
+                                "active": {
+                                    "type": "boolean",
+                                    "description": "Should action be active? Defaults to true.",
+                                    "default": true
+                                },
+                                "collapsed": {
+                                    "type": "boolean",
+                                    "description": "Should action be collapsed? Not used in runtime",
+                                    "default": false
+                                },
+                                "asyncWait": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": ["objectType", "functionExpression"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "Comment",
+                            "type": "object",
+                            "description": "Free comment. Will be ignored on runtime.",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["Comment"]
+                                },
+                                "comment": {
+                                    "type": "string",
+                                    "description": "Free comment. Will be ignored on runtime."
+                                }
+                            },
+                            "required": ["objectType"],
+                            "additionalProperties": false
+                        }
+                    ]
+                },
+                "actionList": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Trigger/definitions/action"
+                    }
+                },
+                "value": {
+                    "anyOf": [
+                        {
+                            "title": "StaticValue",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["StaticValue"]
+                                },
+                                "value": {
+                                    "anyOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "number"
+                                        },
+                                        {
+                                            "type": "boolean"
+                                        },
+                                        {
+                                            "type": "array"
+                                        },
+                                        {
+                                            "type": "object"
+                                        }
+                                    ]
+                                },
+                                "valueType": {
+                                    "type": "string",
+                                    "minLength": 6,
+                                    "pattern": "^tchmi:",
+                                    "description": "Information about the used type as a tchmi reference name for re-edit scenarios while Engineering."
+                                }
+                            },
+                            "required": ["objectType", "value"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "Symbol",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "description": "Value referenced via a Symbol",
+                                    "type": "string",
+                                    "enum": ["Symbol"]
+                                },
+                                "valueType": {
+                                    "type": "string",
+                                    "minLength": 6,
+                                    "pattern": "^tchmi:",
+                                    "description": "Information about the expected type as a tchmi reference name."
+                                },
+                                "symbolExpression": {
+                                    "$ref": "#/definitions/Trigger/definitions/symbolExpression"
+                                }
+                            },
+                            "required": ["objectType", "symbolExpression"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "EventDataObject",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["EventDataObject"]
+                                },
+                                "propertyPath": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["objectType", "propertyPath"],
+                            "additionalProperties": false
+                        },
+                        {
+                            "title": "FunctionExpression",
+                            "type": "object",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["FunctionExpression"]
+                                },
+                                "functionExpression": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["objectType", "functionExpression"],
+                            "additionalProperties": false
+                        }
+                    ]
+                },
+                "comment": {
+                    "title": "Comment",
+                    "type": "string"
+                },
+                "bindingTarget": {
+                    "anyOf": [
+                        {
+                            "title": "ControlAttributeBindingTarget",
+                            "type": "object",
+                            "description": "a ControlAttributeBindingTarget",
+                            "properties": {
+                                "objectType": {
+                                    "type": "string",
+                                    "enum": ["ControlAttributeBindingTarget"]
+                                },
+                                "attributeExpression": {
+                                    "$ref": "#/definitions/Trigger/definitions/controlAttributeSymbolExpression"
+                                }
+                            },
+                            "required": ["objectType"],
+                            "additionalProperties": false
+                        }
+                    ]
+                },
+                "expression": {
+                    "title": "Expression",
+                    "type": "object",
+                    "properties": {
+                        "compare1": {
+                            "$ref": "#/definitions/Trigger/definitions/value"
+                        },
+                        "compare2": {
+                            "$ref": "#/definitions/Trigger/definitions/value"
+                        },
+                        "compareOperator": {
+                            "type": "string",
+                            "enum": ["==", "===", "!=", "!==", "<", "<=", ">", ">="]
+                        },
+                        "logic": {
+                            "anyOf": [
+                                {
+                                    "type": "string",
+                                    "enum": ["AND", "OR"]
+                                },
+                                {
+                                    "type": "null"
+                                }
+                            ]
+                        }
+                    },
+                    "required": ["compare1", "compare2", "compareOperator"],
+                    "additionalProperties": false
+                },
+                "vCase": {
+                    "title": "VCase",
+                    "type": "object",
+                    "properties": {
+                        "actions": {
+                            "$ref": "#/definitions/Trigger/definitions/actionList"
+                        },
+                        "caseValue": {
+                            "$ref": "#/definitions/Trigger/definitions/value"
+                        }
+                    },
+                    "required": ["actions", "caseValue"],
+                    "additionalProperties": false
+                },
+                "dCase": {
+                    "title": "DCase",
+                    "type": "object",
+                    "properties": {
+                        "actions": {
+                            "$ref": "#/definitions/Trigger/definitions/actionList"
+                        }
+                    },
+                    "required": ["actions"],
+                    "additionalProperties": false
+                },
+                "symbolExpression": {
+                    "title": "SymbolExpression",
+                    "description": "Reference to a Symbol Expression",
+                    "type": "string",
+                    "pattern": "^%(s|i|l|pp|tp|f|ctrl|ctx|tr|t)%.+%\\/\\1%$"
+                },
+                "controlSymbolExpression": {
+                    "title": "controlSymbolExpression",
+                    "description": "Reference to a Control Symbol Expression",
+                    "type": "string",
+                    "pattern": "^%(ctrl)%.+%\\1%$"
+                },
+                "controlAttributeSymbolExpression": {
+                    "title": "ControlAttributeSymbolExpression",
+                    "type": "string",
+                    "pattern": "^%(ctrl)%.+%\\1%$"
+                }
+            },
+            "type": "object",
+            "properties": {
+                "event": {
+                    "type": "string",
+                    "description": "Event name",
+                    "minLength": 1
+                },
+                "preventDefault": {
+                    "type": "boolean",
+                    "description": "If activated the default action of the event will not be triggered.\nIf set on touch events the corresponding mouse events will not be triggered."
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Name which should be presented the user."
+                },
+                "actions": {
+                    "type": "array",
+                    "minItems": 1,
+                    "description": "List of actions to trigger.",
+                    "items": {
+                        "$ref": "#/definitions/Trigger/definitions/action"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["event", "actions"]
+        }
+    }
+}
