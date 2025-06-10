@@ -18,4 +18,4 @@ To change the binding mode, **Right Click** the symbol and chose **Edit symbol..
 ![RangeSlider properties](https://user-images.githubusercontent.com/75740551/135626922-6ed07e8a-8ddc-4391-94ab-90c07fce6750.png)
 
 The control also have a custom event that fires on change.
-![RangeSlider properties](https://user-images.githubusercontent.com/75740551/135626975-d7ded869-401f-443f-b5cb-e6b3bcbab13f.png)
+![RangeSlider properties](https://github.com/user-attachments/assets/bc4e312a-df98-43fa-adc4-267c4bacf3d6)
